@@ -1,9 +1,11 @@
 "use client";
 
+import { motion } from "motion/react";
 import SkillCard from "@/components/SkillCard";
 
 import {
     Container,
+    Box,
     Grid,
 } from "@mui/material";
 
@@ -257,154 +259,66 @@ export default function ClientPageForSkills() {
         },
     ];
 
-    // const skills = [
-    //     {
-    //         name: "Mac",
-    //         src: "/images/skill/apple-logo.svg",
-    //         star: 5,
-    //         startYear: 2009,
-    //         types: ["macOS", "ハードウェア保守"],
-    //     },
-    //     {
-    //         name: "Windows",
-    //         src: "/images/skill/Windows-logo.svg",
-    //         star: 5,
-    //         startYear: 2007,
-    //         types: ["Windows OS", "環境構築"],
-    //     },
-    //     {
-    //         name: "Apache",
-    //         src: "/images/skill/apache-logo.svg",
-    //         star: 5,
-    //         startYear: 2008,
-    //         types: ["Webサーバー", "環境構築"],
-    //     },
-    //     {
-    //         name: "HTML",
-    //         src: "/images/skill/html5-logo.svg",
-    //         star: 5,
-    //         startYear: 2008,
-    //         types: ["マークアップ言語", "Web構造"],
-    //     },
-    //     {
-    //         name: "CSS",
-    //         src: "/images/skill/css-logo.svg",
-    //         star: 5,
-    //         startYear: 2008,
-    //         types: ["スタイル定義", "デザイン"],
-    //     },
-    //     {
-    //         name: "sass",
-    //         src: "/images/skill/sass-logo.svg",
-    //         star: 5,
-    //         startYear: 2015,
-    //         types: ["CSSプリプロセッサ"],
-    //     },
-    //     {
-    //         name: "bootstrap",
-    //         src: "/images/skill/bootstrap-logo.svg",
-    //         star: 5,
-    //         startYear: 2015,
-    //         types: ["CSSフレームワーク", "UI/UX"],
-    //     },
-    //     {
-    //         name: "javascript",
-    //         src: "/images/skill/javascript-logo.svg",
-    //         star: 5,
-    //         startYear: 2012,
-    //         types: ["プログラミング言語", "動的処理"],
-    //     },
-    //     {
-    //         name: "typescript",
-    //         src: "/images/skill/typescript-logo.svg",
-    //         star: 4,
-    //         startYear: 2022,
-    //         types:["JS静的型付け", "開発効率化"],
-    //     },
-    //     {
-    //         name: "vue",
-    //         src: "/images/skill/vue-logo.svg",
-    //         star: 5,
-    //         startYear: 2016,
-    //         types: ["JSフレームワーク", "SPA開発"],
-    //     },
-    //     {
-    //         name: "vuetify",
-    //         src: "/images/skill/vuetify-logo.svg",
-    //         star: 5,
-    //         startYear: 2016,
-    //         types: ["UIコンポーネント", "マテリアルデザイン"],
-    //     },
-    //     {
-    //         name: "Google Apps Script",
-    //         src: "/images/skill/gas-logo.svg",
-    //         star: 5,
-    //         startYear: 2014,
-    //         types: ["業務自動化", "クラウドスクリプト"],
-    //     },
-    //     {
-    //         name: "php",
-    //         src: "/images/skill/php-logo.svg",
-    //         star: 4.5,
-    //         startYear: 2012,
-    //         types: ["サーバーサイド言語"],
-    //     },
-    //     {
-    //         name: "wordpress",
-    //         src: "/images/skill/wordpress-logo.svg",
-    //         star: 5,
-    //         startYear: 2014,
-    //         types: ["CMS構築", "ブログ運営", "サイト管理"],
-    //     },
-    //     {
-    //         name: "laravel",
-    //         src: "/images/skill/laravel-logo.svg",
-    //         star: 5,
-    //         startYear: 2015,
-    //         types: ["PHPフレームワーク", "MVC"],
-    //     },
-    //     {
-    //         name: "python",
-    //         src: "/images/skill/python-logo.svg",
-    //         star: 3.5,
-    //         startYear: 2021,
-    //         types: ["データ処理", "データ分析", "表形式処理", "Webスクレイピング"],
-    //     },
-    //     {
-    //         name: "mysql",
-    //         src: "/images/skill/mysql-logo.svg",
-    //         star: 4.5,
-    //         startYear: 2014,
-    //         types: ["RDB", "データ管理"],
-    //     },
-    //     {
-    //         name: "maria DB",
-    //         src: "/images/skill/mariadb-logo.svg",
-    //         star: 3.5,
-    //         startYear: 2022,
-    //         types: ["RDB", "データ管理"],
-    //     },
-    // ]
+    // for animation
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.55, // 各子の開始を0.15秒ずらす
+            },
+        },
+    };
+    const itemVariants = {
+        hidden: { opacity: 0, y: 100 },
+        visible: {
+            opacity: 1,
+            y: 0,
+        },
+    };
+
     return (
         <Container
             sx={{ p: 3 }}
             maxWidth="xl"
             >
-            <Grid container spacing={2}>
-                {skills.map((skill, i) => (
-                    <Grid
-                        key={`${skill.name}_${i}`}
-                        size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
-                        sx={{ height: "auto" }}
-                        >
-                        <SkillCard
-                            skill={skill}
-                            width={100}
-                            height={100}
-                            />
-                    </Grid>
-                ))}
-            </Grid>
+            <Box
+                component={motion.div}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                sx={{ p: 4 }}
+                >
+                <Grid container spacing={2}>
+                    {skills.map((skill, i) => (
+                        <Grid
+                            key={`${skill.name}_${i}`}
+                            size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+                            sx={{ height: "auto" }}
+                            >
+                            <Box
+                                component={motion.div}
+                                variants={itemVariants}
+                                transition={{ duration:0.4, ease: "easeOut"}}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 3,
+                                    textAlign: "center",
+                                    bgcolor: "background.paper",
+                                    boxShadow: 3,
+                                    "&:hover": { boxShadow: 6, scale: 1.02 },
+                                }}
+                                >
+                                <SkillCard
+                                    skill={skill}
+                                    width={100}
+                                    height={100}
+                                    />
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
         </Container>
     );
 }

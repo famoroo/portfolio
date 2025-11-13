@@ -1,7 +1,7 @@
-import ClientPageForWorks from "./clientPage";
+import ClientPageForSkills from "./clientPage";
 
-export default async function PageForWorks() {
+export default async function PageForSkills() {
     return (
-        <ClientPageForWorks />
+        <ClientPageForSkills />
     );
 }
