@@ -17,13 +17,14 @@ export function ParallaxSection({ children }: { children: React.ReactNode }) {
 
     // const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 1]);
-    // const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-    // const scale = useSpring(rawScale, {
-    //     damping: 20,
-    //     stiffness: 1000,
-    //     mass: 2,
-    //     velocity: 3,
-    // });
+    
+    const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+    const scale = useSpring(rawScale, {
+        damping: 20,
+        stiffness: 1000,
+        mass: 2,
+        velocity: 3,
+    });
 
     return (
         <Box
@@ -33,18 +34,18 @@ export function ParallaxSection({ children }: { children: React.ReactNode }) {
                 scrollSnapAlign: "start",
                 position: "relative",
                 overflow: "hidden",
-                // background: "linear-gradient(120deg, #a675a5, #ff8b8b)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`
             }}
-            className="bg-gradient-to-br from-lime-200 from-10% via-lime-100 via-20% to-lime-5 to-70% "
+            // className="bg-gradient-to-br from-lime-200 from-10% via-lime-100 via-20% to-lime-5 to-70% "
         >
             <motion.div
                 style={{
                     // y,
                     opacity,
-                    // scale
+                    scale
                 }}
                 >
                 {children}

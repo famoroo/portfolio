@@ -366,6 +366,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     ref={preLayersRef}
                     className="sm-prelayers absolute top-0 right-0 bottom-0 pointer-events-none z-[5]"
                     aria-hidden="true"
+                    data-ready={isReady || undefined}
                 >
                     {(() => {
                         const raw = colors && colors.length ? colors.slice(0, 4) : ['#1e1e22', '#35353c'];
@@ -448,6 +449,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         WebkitBackdropFilter: 'blur(12px)'
                     }}
                     aria-hidden={!open}
+                    data-ready={isReady || undefined}
                 >
                     <div className="sm-panel-inner flex-1 flex flex-col gap-5">
                         <ul

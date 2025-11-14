@@ -6,7 +6,6 @@ import {
 	Typography,
 } from "@mui/material";
 
-// import ClientPageContent from "./clientPageContent";
 import SmokeImage from "@/components/SmokeImage";
 
 import { ParallaxSection } from "@/components/animations/ScrollSnap/ParallaxSection";
@@ -39,7 +38,6 @@ export default function ClientPage() {
 				</ParallaxSection>
 				<ParallaxSection>
 					<LogoLoop
-						// duration={10}
 						logos={[
 							{ src: "/images/skill/next-logo.svg", alt: "Next.js" },
 							{ src: "/images/skill/react-logo.svg", alt: "React" },
@@ -117,8 +115,8 @@ export default function ClientPage() {
 					<SmokeImage
 						src="https://hotarutei.com/wp2023/wp-content/themes/hotarutei/assets/images/sections/index/overview/map_pc.svg"
 						alt="Vercel logomark"
-						width={1200}
-						height={1200}
+						width={480}
+						height={480}
 						/>
 				</ParallaxSection>
 			</ScrollSnapContainer>
