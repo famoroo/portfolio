@@ -6,7 +6,8 @@ import {
 	Typography,
 } from "@mui/material";
 
-import ClientPageContent from "./clientPageContent";
+// import ClientPageContent from "./clientPageContent";
+import SmokeImage from "@/components/SmokeImage";
 
 import { ParallaxSection } from "@/components/animations/ScrollSnap/ParallaxSection";
 import { ScrollSnapContainer } from "@/components/animations/ScrollSnap/ScrollSnapContainer";
@@ -22,6 +23,7 @@ import {
 	TextFade,
 	ShimmeringText,
 } from "@/components/animations/TextAnimiation";
+import { LogoLoop } from "@/components/animations/LogoLoop";
 
 export default function ClientPage() {
 	return (
@@ -34,6 +36,24 @@ export default function ClientPage() {
 						// color="amber"
 						ms={3000}
 						/>
+				</ParallaxSection>
+				<ParallaxSection>
+					<LogoLoop
+						// duration={10}
+						logos={[
+							{ src: "/images/skill/next-logo.svg", alt: "Next.js" },
+							{ src: "/images/skill/react-logo.svg", alt: "React" },
+							{ src: "/images/skill/supabase-logo.svg", alt: "Supabase" },
+							{ src: "/images/skill/amplify-logo.svg", alt: "AWS" },
+							{ src: "/images/skill/mui-logo.svg", alt: "MUI" },
+							{ src: "/images/skill/javascript-logo.svg", alt: "javascript" },
+							{ src: "/images/skill/bootstrap-logo.svg", alt: "bootstrap" },
+							{ src: "/images/skill/apple-logo.svg", alt: "Apple" },
+							{ src: "/images/skill/wordpress-logo.svg", alt: "wordpress" },
+							{ src: "/images/skill/vue-logo.svg", alt: "vue" },
+							{ src: "/images/skill/vuetify-logo.svg", alt: "vuetify" },
+						]}
+					/>
 				</ParallaxSection>
 				<ParallaxSection>
 					<ShimmeringText
@@ -94,7 +114,12 @@ export default function ClientPage() {
 					/>
 				</ParallaxSection>
 				<ParallaxSection>
-					<ClientPageContent />
+					<SmokeImage
+						src="https://hotarutei.com/wp2023/wp-content/themes/hotarutei/assets/images/sections/index/overview/map_pc.svg"
+						alt="Vercel logomark"
+						width={1200}
+						height={1200}
+						/>
 				</ParallaxSection>
 			</ScrollSnapContainer>
 		</Box>

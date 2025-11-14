@@ -17,13 +17,13 @@ export function ParallaxSection({ children }: { children: React.ReactNode }) {
 
     // const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 1]);
-    const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-    const scale = useSpring(rawScale, {
-        damping: 20,
-        stiffness: 1000,
-        mass: 2,
-        velocity: 3,
-    });
+    // const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+    // const scale = useSpring(rawScale, {
+    //     damping: 20,
+    //     stiffness: 1000,
+    //     mass: 2,
+    //     velocity: 3,
+    // });
 
     return (
         <Box
@@ -44,7 +44,7 @@ export function ParallaxSection({ children }: { children: React.ReactNode }) {
                 style={{
                     // y,
                     opacity,
-                    scale
+                    // scale
                 }}
                 >
                 {children}

@@ -1,0 +1,50 @@
+.scroll_wrap {
+    width: 100vw;
+    overflow: hidden;
+    --scroll-gap: 30px;
+}
+
+.scroll_track {
+    width: max-content;
+    animation: infiniteScroll 20s linear infinite;
+}
+
+.scroll_reverse_track {
+    width: max-content;
+    animation: infiniteReverseScroll 20s linear infinite;
+    transform: translateX(calc(-50% - var(--scroll-gap) / 2));
+}
+
+.scroll_inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0 var(--scroll-gap);
+}
+
+.scroll_cont {
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    min-width: 10vw;
+    aspect-ratio: 1 / 1;
+    color: white;
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - var(--scroll-gap) / 2));
+    }
+}
+@keyframes infiniteReverseScroll {
+    0% {
+        transform: translateX(calc(-50% - var(--scroll-gap) / 2));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

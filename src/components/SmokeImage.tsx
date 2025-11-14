@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useOnScreen } from "@/hooks/useOnScreen";
 
 import { Box } from "@mui/material";
+import styles from "./SmokeImage.module.scss";
 
 type SmokeImageProps = {
     src: string;
@@ -19,14 +20,11 @@ export default function SmokeImage({
 }: SmokeImageProps) {
     const [ref, isVisible] = useOnScreen<HTMLDivElement>({ threshold: 0.1 });
 
-    const className = `dark:invert ${isVisible ? "is-play" : ""}`;
-
     return (
         <>
         <Box
             ref={ref}
-            data-smoke
-            className={className}
+            className={`${styles.smoke} ${isVisible ? styles.is_play : ""}`}
             sx={{ display: "flex", justifyContent: "center" }}
             >
             <Image
@@ -43,7 +41,7 @@ export default function SmokeImage({
             />
         </Box>
 
-        <style jsx>{`
+        {/* <style jsx>{`
             [data-smoke] {
                 -webkit-mask-image: url("/images/hooks/smoke_image.webp");
                 mask-image: url("/images/hooks/smoke_image.webp");
@@ -55,8 +53,8 @@ export default function SmokeImage({
             }
 
             [data-smoke].is-play {
-                -webkit-animation: mask-play 1.5s steps(35) 0.2s forwards;
-                animation: mask-play 1.5s steps(35) 0.2s forwards;
+                -webkit-animation: mask-play 1.5s steps(35) 10s forwards;
+                animation: mask-play 1.5s steps(35) 10s forwards;
             }
 
             @-webkit-keyframes mask-play {
@@ -80,7 +78,7 @@ export default function SmokeImage({
                     mask-position: 0 100%;
                 }
             }
-        `}</style>
+        `}</style> */}
         </>
     );
 }
