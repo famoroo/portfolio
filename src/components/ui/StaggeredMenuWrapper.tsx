@@ -21,8 +21,8 @@ export default function StaggeredMenuWrapper() {
             position = "left"
             items = { menuItems }
             socialItems = { socialItems }
-            displaySocials = { true}
-            displayItemNumbering = { true}
+            displaySocials = {true}
+            displayItemNumbering = {true}
             menuButtonColor = "#000"
             openMenuButtonColor = "#000"
             changeMenuColorOnOpen = { true}
