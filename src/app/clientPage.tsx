@@ -36,7 +36,7 @@ export default function ClientPage() {
 						ms={3000}
 						/>
 				</ParallaxSection>
-				<ParallaxSection>
+				<ParallaxSection damping={false}>
 					<LogoLoop
 						logos={[
 							{ src: "/images/skill/next-logo.svg", alt: "Next.js" },
@@ -111,7 +111,7 @@ export default function ClientPage() {
 						priority
 					/>
 				</ParallaxSection>
-				<ParallaxSection>
+				<ParallaxSection damping={false}>
 					<SmokeImage
 						src="https://hotarutei.com/wp2023/wp-content/themes/hotarutei/assets/images/sections/index/overview/map_pc.svg"
 						alt="Vercel logomark"
