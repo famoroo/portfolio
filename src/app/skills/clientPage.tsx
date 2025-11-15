@@ -9,8 +9,6 @@ import {
     Grid,
 } from "@mui/material";
 
-// import { differenceInYears } from "date-fns";
-
 export default function ClientPageForSkills() {
     const skills = [
         {
@@ -294,7 +292,7 @@ export default function ClientPageForSkills() {
                         <Grid
                             key={`${skill.name}_${i}`}
                             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
-                            sx={{ height: "auto" }}
+                            sx={{ height: "auto", display: "flex" }}
                             >
                             <Box
                                 component={motion.div}
@@ -307,6 +305,9 @@ export default function ClientPageForSkills() {
                                     bgcolor: "background.paper",
                                     boxShadow: 3,
                                     "&:hover": { boxShadow: 6, scale: 1.02 },
+                                    width: "100%",
+                                    display: "flex",
+                                    flexDirection: "column"
                                 }}
                                 >
                                 <SkillCard

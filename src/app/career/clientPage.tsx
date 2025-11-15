@@ -49,8 +49,11 @@ export default function ClientPageForCareers() {
 
     return (
         <Box
-            className="bg-gradient-to-br from-lime-200 from-10% via-lime-100 via-20% to-lime-5 to-70% "
-            sx={{ height: "100vh", overflow: "auto" }}
+            sx={{
+                height: "100vh",
+                overflow: "auto",
+                background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`
+            }}
             >
             <Container
                 maxWidth="lg"
@@ -86,10 +89,10 @@ export default function ClientPageForCareers() {
                                         >
                                         <Toolbar
                                             variant="dense"
-                                            className="bg-gradient-to-b from-success-dark via-success-main to-success-light"
                                             sx={{
                                                 color: "white",
                                                 fontWeight: "bold",
+                                                background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`
                                             }}
                                             >
                                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

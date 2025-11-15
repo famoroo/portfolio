@@ -25,7 +25,7 @@ export function ParallaxSection({
     const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 1]);
 
     // 基本の scale（生の変換）
-    const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+    const rawScale = useTransform(scrollYProgress, [0, 1], [1, damping ? 1.2 : 1]);
     // スプリング（柔らかく追従）
     const smoothScale = useSpring(rawScale, {
         damping: 20,
@@ -34,13 +34,6 @@ export function ParallaxSection({
         velocity: 3,
     });
     const scale = damping ? smoothScale : rawScale;
-    // const rawScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-    // const scale = useSpring(rawScale, {
-    //     damping: 20,
-    //     stiffness: 1000,
-    //     mass: 2,
-    //     velocity: 3,
-    // });
 
     return (
         <Box

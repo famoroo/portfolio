@@ -79,7 +79,12 @@ export default function SkillCard({ skill, width, height }: SkillCardProps) {
                             </Box>
                         ))}
                     </Stack>
-                    <Box sx={{ p: 2 }}>
+                    <Box
+                        sx={{
+                            p: 2,
+                            display: "flex",
+                            justifyContent: "center",
+                        }}>
                         <SmokeImage
                             src={skill.src}
                             alt={skill.name}
