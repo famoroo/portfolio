@@ -285,7 +285,7 @@ export default function ClientPageForSkills() {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0, margin: "0px 0px -100px 0px" }}
                 sx={{ p: 4 }}
                 >
                 <Grid container spacing={2}>
