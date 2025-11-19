@@ -259,8 +259,9 @@ export default function ClientPageForSkills() {
 
     // for animation
     const containerVariants = {
-        hidden: {},
+        hidden: { opacity: 0 },
         visible: {
+            opacity: 1,
             transition: {
                 staggerChildren: 0.55, // 各子の開始を0.15秒ずらす
             },
@@ -284,7 +285,7 @@ export default function ClientPageForSkills() {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 sx={{ p: 4 }}
                 >
                 <Grid container spacing={2}>
@@ -304,7 +305,7 @@ export default function ClientPageForSkills() {
                                     textAlign: "center",
                                     bgcolor: "background.paper",
                                     boxShadow: 3,
-                                    "&:hover": { boxShadow: 6, scale: 1.02 },
+                                    "&:hover": { boxShadow: 6, transform: "scale(1.02)" },
                                     width: "100%",
                                     display: "flex",
                                     flexDirection: "column"

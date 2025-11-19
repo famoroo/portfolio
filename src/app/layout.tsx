@@ -24,12 +24,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StaggeredMenuWrapper />
-        {children}
+        <div
+          style={{
+              height: "100vh",
+              overflow: "auto",
+              background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`,
+              paddingTop: "100px",
+          }}>
+          {children}
+        </div>
       </body>
     </html>
   );

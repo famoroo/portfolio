@@ -49,7 +49,6 @@ export function ParallaxSection({
                 color: "black",
                 background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`
             }}
-            // className="bg-gradient-to-br from-lime-200 from-10% via-lime-100 via-20% to-lime-5 to-70% "
         >
             <motion.div
                 style={{
