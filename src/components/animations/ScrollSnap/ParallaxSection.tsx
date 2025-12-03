@@ -54,7 +54,9 @@ export function ParallaxSection({
                 style={{
                     // y,
                     opacity,
-                    scale
+                    scale,
+                    width: "100%",
+                    display: "contents",
                 }}
                 >
                 {children}

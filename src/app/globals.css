@@ -113,3 +113,7 @@ body {
     --background: rgb(255 255 255);
     --foreground: rgb(23 23 23);
 }
+
+.grecaptcha-badge {
+    visibility: hidden;
+}

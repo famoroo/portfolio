@@ -5,6 +5,7 @@ import { StaggeredMenu } from '@/components/ui/StaggeredMenu';
 export default function StaggeredMenuWrapper() {
     const menuItems = [
         { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+        { label: 'PROFILE', ariaLabel: 'Learn about us', link: '/profile' },
         { label: 'WORKS', ariaLabel: 'Learn about us', link: '/works' },
         { label: 'SKILLS', ariaLabel: 'View our services', link: '/skills' },
         { label: 'CAREER', ariaLabel: 'Get in touch', link: '/career' },
@@ -14,11 +15,11 @@ export default function StaggeredMenuWrapper() {
     const socialItems = [
         { label: 'Twitter', link: 'https://twitter.com' },
         { label: 'GitHub', link: 'https://github.com' },
-        { label: 'LinkedIn', link: 'https://linkedin.com' }
+        // { label: 'LinkedIn', link: 'https://linkedin.com' }
     ];
     return (
         <StaggeredMenu
-            position = "left"
+            position = "right"
             items = { menuItems }
             socialItems = { socialItems }
             displaySocials = {true}
@@ -30,8 +31,8 @@ export default function StaggeredMenuWrapper() {
             logoUrl = "/next.svg"
             accentColor = "#ff6b6b"
             isFixed = { false}
-            onMenuOpen = {() => console.log('Menu opened')}
-            onMenuClose = {() => console.log('Menu closed')}
+            // onMenuOpen = {() => console.log('Menu opened')}
+            // onMenuClose = {() => console.log('Menu closed')}
             />
     );
 }

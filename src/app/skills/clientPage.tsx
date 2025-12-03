@@ -277,8 +277,8 @@ export default function ClientPageForSkills() {
 
     return (
         <Container
-            sx={{ p: 3 }}
             maxWidth="xl"
+            sx={{ paddingTop: "100px" }}
             >
             <Box
                 component={motion.div}
@@ -286,7 +286,7 @@ export default function ClientPageForSkills() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0, margin: "0px 0px -100px 0px" }}
-                sx={{ p: 4 }}
+                sx={{ p: 2 }}
                 >
                 <Grid container spacing={2}>
                     {skills.map((skill, i) => (

@@ -4,7 +4,16 @@ import Image from "next/image";
 import {
 	Box,
 	Typography,
+	Card, CardContent,
+	Stack,
+	Avatar,
+	Grid,
+	Link
 } from "@mui/material";
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import ComputerIcon from '@mui/icons-material/Computer';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import HistoryIcon from '@mui/icons-material/History';
 
 import SmokeImage from "@/components/SmokeImage";
 
@@ -23,6 +32,8 @@ import {
 	ShimmeringText,
 } from "@/components/animations/TextAnimiation";
 import { LogoLoop } from "@/components/animations/LogoLoop";
+
+import { lime } from "@mui/material/colors";
 
 export default function ClientPage() {
 	return (
@@ -53,6 +64,80 @@ export default function ClientPage() {
 						]}
 					/>
 				</ParallaxSection>
+
+
+				<ParallaxSection>
+					<Grid
+						container
+						spacing={2}
+						maxWidth={"lg"}
+						>
+						{[
+							{
+								href: "/profile",
+								title: "PROFILE",
+								subTitle: "わたしのこと",
+								text: "気になることはとことん調べて、つくりたくなったらすぐ手を動かすタイプです。便利なものを見つけたらシェアしたくなるし、「これ、もっと良くできるのに…」と思えば勝手に改善しはじめます。",
+								icon: <PermIdentityIcon />,
+							},
+							{
+								href: "/works",
+								title: "WORKS",
+								subTitle: "制作物",
+								text: "「これ不便だな…」と思ったら、とりあえず作ってみるタイプです。業務ツールから AI ボットまで、気づいたら色んなジャンルに手を出してました。サッと触ってわかる“ちょうどいい使い心地”を目指しています。",
+								icon: <ComputerIcon />,
+							},
+							{
+								href: "/skills",
+								title: "SKILLS",
+								subTitle: "技術",
+								text: "見た目の部分から裏側のロジックまで、ひと通りまとめてやります。Next.js や Supabase が得意ですが、必要なら何でも触ります。「とりあえず相談してもらえれば何とかする」がモットーです。",
+								icon: <StarRateIcon />,
+							},
+							{
+								href: "/career",
+								title: "CAREER",
+								subTitle: "経歴",
+								text: "現場の「あ、ここ困ってるんだな」を拾い集めて、ちょっとずつ便利にする仕事をしてきました。“やってよかった！”と言ってもらえるのが一番うれしいところです。",
+								icon: <HistoryIcon />,
+							},
+						].map((itm, idx) => (
+							<Grid key={idx} size={{ xs: 12, md: 6, lg: 3 }}>
+								<Link
+									href={itm.href}
+									underline="none"
+									>
+									<Card
+										variant="outlined"
+										sx={{
+											width: "100%",
+											height: "100%",
+											transition: "all .5s",
+											"&:hover": {
+												transform: "scale(1.05)",
+												backgroundColor: lime[50],
+											}
+										}}
+										>
+										<CardContent>
+											<Stack
+												spacing={1}
+												>
+												<Avatar>
+													{itm.icon}
+												</Avatar>
+												<Typography variant="h5" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>{itm.title}</Typography>
+												<Typography variant="body2">{itm.subTitle}</Typography>
+												<Typography variant="caption">{itm.text}</Typography>
+											</Stack>
+										</CardContent>
+									</Card>
+								</Link>
+							</Grid>
+						))}
+					</Grid>
+				</ParallaxSection>
+
 				<ParallaxSection>
 					<ShimmeringText
 						text="famoroo portfolio"
@@ -65,41 +150,43 @@ export default function ClientPage() {
 				</ParallaxSection>
 				<ParallaxSection>
 					<TextSplitAnimiation text = "famoroo portfolio" />
-					<GradualSpacing text = "famoroo portfolio" />
-					<TypingEffect text = "famoroo portfolio" />
-					<StaggeredFade text = "famoroo portfolio" />
-					<LettersPullUp text = "famoroo portfolio" />
-					<WordsPullUp text = "famoroo portfolio" />
-					<BlurIn>famoroo portfolio</BlurIn>
-					<TextFade
-						direction="down"
-						className="pt-0 pb-5 flex-col flex justify-center items-center space-y-0"
-						>
-						<Typography
-							variant="h3"
-							sx={{ fontWeight: "bold" }}
-							className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[0rem] prose-h2:my-0">
-							Fade Down
-						</Typography>
-						<Typography className="prose-p:my-1 text-center md:text-lg max-w-lg mx-auto text-balance dark:text-zinc-300">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit amet.
-						</Typography>
-					</TextFade>
+					<Stack>
+						<GradualSpacing text = "famoroo portfolio" />
+						<TypingEffect text = "famoroo portfolio" />
+						<StaggeredFade text = "famoroo portfolio" />
+						<LettersPullUp text = "famoroo portfolio" />
+						<WordsPullUp text = "famoroo portfolio" />
+						<BlurIn>famoroo portfolio</BlurIn>
+						<TextFade
+							direction="down"
+							className="pt-0 pb-5 flex-col flex justify-center items-center space-y-0"
+							>
+							<Typography
+								variant="h3"
+								sx={{ fontWeight: "bold" }}
+								className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[0rem] prose-h2:my-0">
+								Fade Down
+							</Typography>
+							<Typography className="prose-p:my-1 text-center md:text-lg max-w-lg mx-auto text-balance dark:text-zinc-300">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit amet.
+							</Typography>
+						</TextFade>
 
-					<TextFade
-						direction="up"
-						className="pt-0 pb-5 flex-col flex justify-center items-center space-y-0"
-						>
-						<Typography
-							variant="h3"
-							sx={{ fontWeight: "bold" }}
-							className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[0rem] prose-h2:my-0">
-							Fade Up
-						</Typography>
-						<Typography className="prose-p:my-1 text-center md:text-lg max-w-lg mx-auto text-balance dark:text-zinc-300">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit amet.
-						</Typography>
-					</TextFade>
+						<TextFade
+							direction="up"
+							className="pt-0 pb-5 flex-col flex justify-center items-center space-y-0"
+							>
+							<Typography
+								variant="h3"
+								sx={{ fontWeight: "bold" }}
+								className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[0rem] prose-h2:my-0">
+								Fade Up
+							</Typography>
+							<Typography className="prose-p:my-1 text-center md:text-lg max-w-lg mx-auto text-balance dark:text-zinc-300">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit amet.
+							</Typography>
+						</TextFade>
+					</Stack>
 				</ParallaxSection>
 				<ParallaxSection>
 					<Image

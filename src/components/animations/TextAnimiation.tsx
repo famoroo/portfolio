@@ -3,7 +3,7 @@ import * as React from 'react';
 import { motion, AnimatePresence, useInView } from "motion/react"
 import { cn } from '@/lib/utils';
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 // ui.indie
 // https://ui.indie-starter.dev/docs/text-animation
@@ -13,28 +13,19 @@ type Props = {
 }
 export function TextSplitAnimiation({ text }: Props) {
     return (
-        <Box
-            sx={{
-                p: 4,
-                textAlign: "center",
-            }}
-        >
-            <Typography
-                variant="h6"
+        <>
+        {text.split("").map((char, i) => (
+            <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15 }}
+                viewport={{ once: true }}
             >
-                {text.split("").map((char, i) => (
-                    <motion.span
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.15 }}
-                        viewport={{ once: true }}
-                    >
-                        {char}
-                    </motion.span>
-                ))}
-            </Typography>
-        </Box>
+                {char}
+            </motion.span>
+        ))}
+        </>
     )
 }
 export function GradualSpacing({ text }: Props) {
