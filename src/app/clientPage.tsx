@@ -31,6 +31,8 @@ import {
 	// TextFade,
 	// ShimmeringText,
 } from "@/components/animations/TextAnimiation";
+import SectionContact from "@/components/SectionContact";
+
 import { LogoLoop } from "@/components/animations/LogoLoop";
 
 import { lime } from "@mui/material/colors";
@@ -206,6 +208,10 @@ export default function ClientPage() {
 						height={480}
 						/>
 				</ParallaxSection> */}
+
+				<ParallaxSection>
+					<SectionContact />
+				</ParallaxSection>
 			</ScrollSnapContainer>
 		</Box>
     );
