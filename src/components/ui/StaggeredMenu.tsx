@@ -388,60 +388,60 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 <header
                     className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
                     aria-label="Main navigation header"
-                >
-                <Link href="/">
-                    <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
-                        <div className="font-bold text-2xl">LOGO</div>
-                        {/* <Image
-                            src={logoUrl || '/public/images/next.svg'}
-                            alt="Logo"
-                            className="sm-logo-img block h-8 w-auto object-contain"
-                            draggable={false}
-                            width={110}
-                            height={24}
-                        /> */}
-                    </div>
-                </Link>
-
-                <button
-                    ref={toggleBtnRef}
-                    className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open ? 'text-black' : 'text-[#e9e9ef]'
-                        }`}
-                    aria-label={open ? 'Close menu' : 'Open menu'}
-                    aria-expanded={open}
-                    aria-controls="staggered-menu-panel"
-                    onClick={toggleMenu}
-                    type="button"
-                >
-                    <span
-                        ref={textWrapRef}
-                        className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
-                        aria-hidden="true"
                     >
-                        <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
-                            {textLines.map((l, i) => (
-                                <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
-                                    {l}
-                                </span>
-                            ))}
+                    <Link href="/">
+                        <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
+                            <div className="font-bold text-2xl">LOGO</div>
+                            {/* <Image
+                                src={logoUrl || '/public/images/next.svg'}
+                                alt="Logo"
+                                className="sm-logo-img block h-8 w-auto object-contain"
+                                draggable={false}
+                                width={110}
+                                height={24}
+                            /> */}
+                        </div>
+                    </Link>
+
+                    <button
+                        ref={toggleBtnRef}
+                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open ? 'text-black' : 'text-[#e9e9ef]'
+                            }`}
+                        aria-label={open ? 'Close menu' : 'Open menu'}
+                        aria-expanded={open}
+                        aria-controls="staggered-menu-panel"
+                        onClick={toggleMenu}
+                        type="button"
+                    >
+                        <span
+                            ref={textWrapRef}
+                            className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
+                            aria-hidden="true"
+                        >
+                            <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
+                                {textLines.map((l, i) => (
+                                    <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
+                                        {l}
+                                    </span>
+                                ))}
+                            </span>
                         </span>
-                    </span>
 
-                    <span
-                        ref={iconRef}
-                        className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
-                        aria-hidden="true"
-                    >
                         <span
-                            ref={plusHRef}
-                            className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-                        />
-                        <span
-                            ref={plusVRef}
-                            className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-                        />
-                    </span>
-                </button>
+                            ref={iconRef}
+                            className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+                            aria-hidden="true"
+                        >
+                            <span
+                                ref={plusHRef}
+                                className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                            />
+                            <span
+                                ref={plusVRef}
+                                className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                            />
+                        </span>
+                    </button>
                 </header>
 
                 <aside

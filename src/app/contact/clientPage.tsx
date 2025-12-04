@@ -25,6 +25,7 @@ import { toast } from "react-toastify";
 import DialogConfirm from "@/components/DialogConfirm";
 import TextInputField from "@/components/form/TextInputField";
 import TextareaInputField from "@/components/form/TextareaInputField";
+import PageTitle from "@/components/PageTitle";
 
 import { getRecaptchaEnterpriseToken } from "@/lib/recaptcha/recaptchaClient";
 
@@ -108,6 +109,11 @@ export default function ClientPageForContact({
                 paddingTop: "100px",
             }}
             >
+            <PageTitle
+                title="CONTACT"
+                subtitle="お問い合わせ"
+                />
+
             <Paper
                 variant="outlined"
                 sx={{ py: 4, m: 1 }}
@@ -115,7 +121,7 @@ export default function ClientPageForContact({
                 <Container
                     maxWidth="md"
                     >
-                    <Box sx={{ my: 2, textAlign: "center" }}>
+                    {/* <Box sx={{ my: 2, textAlign: "center" }}>
                         <Typography
                             sx={{ fontWeight: "bold" }}
                             color="text.secondary"
@@ -129,7 +135,7 @@ export default function ClientPageForContact({
                             >
                             お問い合わせ
                         </Typography>
-                    </Box>
+                    </Box> */}
 
                     <Stack spacing={1} sx={{ my: 2 }}>
                         <Alert

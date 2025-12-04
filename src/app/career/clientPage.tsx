@@ -25,6 +25,7 @@ import {
 import {
 	TextSplitAnimiation,
 } from "@/components/animations/TextAnimiation";
+import PageTitle from "@/components/PageTitle";
 
 import ListContentForCareer from "./ListContent";
 import GridContentForCareer from "./GridContent";
@@ -366,6 +367,11 @@ export default function ClientPageForCareers() {
             maxWidth="xl"
             sx={{ paddingTop: "100px" }}
             >
+            <PageTitle
+                title="career"
+                subtitle="やってきたこと"
+                />
+
             {isMobile
             ? (
                 <Stack spacing={2}>
@@ -396,6 +402,7 @@ export default function ClientPageForCareers() {
                                         color="success"
                                         sx={{
                                             fontWeight: "bold",
+                                            fontSize: "1.5rem",
                                         }}
                                         >
                                         {career.year}年

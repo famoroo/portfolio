@@ -8,6 +8,7 @@ import {
     Box,
     Grid,
 } from "@mui/material";
+import PageTitle from "@/components/PageTitle";
 
 export default function ClientPageForSkills() {
     const skills = [
@@ -280,6 +281,11 @@ export default function ClientPageForSkills() {
             maxWidth="xl"
             sx={{ paddingTop: "100px" }}
             >
+            <PageTitle
+                title="Skills"
+                subtitle="できること"
+                />
+
             <Box
                 component={motion.div}
                 variants={containerVariants}
