@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import {
 	Box,
 	Typography,
@@ -15,21 +15,21 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import HistoryIcon from '@mui/icons-material/History';
 
-import SmokeImage from "@/components/SmokeImage";
+// import SmokeImage from "@/components/SmokeImage";
 
 import { ParallaxSection } from "@/components/animations/ScrollSnap/ParallaxSection";
 import { ScrollSnapContainer } from "@/components/animations/ScrollSnap/ScrollSnapContainer";
 import {
 	RotateWords,
-	StaggeredFade,
-	TextSplitAnimiation,
-	GradualSpacing,
-	TypingEffect,
-	LettersPullUp,
-	WordsPullUp,
-	BlurIn,
-	TextFade,
-	ShimmeringText,
+	// StaggeredFade,
+	// TextSplitAnimiation,
+	// GradualSpacing,
+	// TypingEffect,
+	// LettersPullUp,
+	// WordsPullUp,
+	// BlurIn,
+	// TextFade,
+	// ShimmeringText,
 } from "@/components/animations/TextAnimiation";
 import { LogoLoop } from "@/components/animations/LogoLoop";
 
@@ -138,7 +138,7 @@ export default function ClientPage() {
 					</Grid>
 				</ParallaxSection>
 
-				<ParallaxSection>
+				{/* <ParallaxSection>
 					<ShimmeringText
 						text="famoroo portfolio"
 						color="var(--color-cyan-500)"
@@ -205,7 +205,7 @@ export default function ClientPage() {
 						width={480}
 						height={480}
 						/>
-				</ParallaxSection>
+				</ParallaxSection> */}
 			</ScrollSnapContainer>
 		</Box>
     );
