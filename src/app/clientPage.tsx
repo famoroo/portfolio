@@ -31,9 +31,8 @@ import {
 	// TextFade,
 	// ShimmeringText,
 } from "@/components/animations/TextAnimiation";
-import SectionContact from "@/components/SectionContact";
-
-import { LogoLoop } from "@/components/animations/LogoLoop";
+import SectionSkills from "@/components/features/top/SectionSkills";
+import SectionContact from "@/components/features/top/SectionContact";
 
 import { lime } from "@mui/material/colors";
 
@@ -50,7 +49,8 @@ export default function ClientPage() {
 						/>
 				</ParallaxSection>
 				<ParallaxSection damping={false}>
-					<LogoLoop
+					<SectionSkills />
+					{/* <LogoLoop
 						logos={[
 							{ src: "/images/skill/next-logo.svg", alt: "Next.js" },
 							{ src: "/images/skill/react-logo.svg", alt: "React" },
@@ -64,7 +64,7 @@ export default function ClientPage() {
 							{ src: "/images/skill/vue-logo.svg", alt: "vue" },
 							{ src: "/images/skill/vuetify-logo.svg", alt: "vuetify" },
 						]}
-					/>
+					/> */}
 				</ParallaxSection>
 
 
