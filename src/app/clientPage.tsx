@@ -3,17 +3,9 @@
 // import Image from "next/image";
 import {
 	Box,
-	Typography,
-	Card, CardContent,
-	Stack,
-	Avatar,
-	Grid,
-	Link
+	// Typography,
+	// Stack,
 } from "@mui/material";
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import ComputerIcon from '@mui/icons-material/Computer';
-import StarRateIcon from '@mui/icons-material/StarRate';
-import HistoryIcon from '@mui/icons-material/History';
 
 // import SmokeImage from "@/components/SmokeImage";
 
@@ -33,8 +25,7 @@ import {
 } from "@/components/animations/TextAnimiation";
 import SectionSkills from "@/components/features/top/SectionSkills";
 import SectionContact from "@/components/features/top/SectionContact";
-
-import { lime } from "@mui/material/colors";
+import SectionInduction from "@/components/features/top/SectionInduction";
 
 export default function ClientPage() {
 	return (
@@ -50,97 +41,18 @@ export default function ClientPage() {
 				</ParallaxSection>
 				<ParallaxSection damping={false}>
 					<SectionSkills />
-					{/* <LogoLoop
-						logos={[
-							{ src: "/images/skill/next-logo.svg", alt: "Next.js" },
-							{ src: "/images/skill/react-logo.svg", alt: "React" },
-							{ src: "/images/skill/supabase-logo.svg", alt: "Supabase" },
-							{ src: "/images/skill/amplify-logo.svg", alt: "AWS" },
-							{ src: "/images/skill/mui-logo.svg", alt: "MUI" },
-							{ src: "/images/skill/javascript-logo.svg", alt: "javascript" },
-							{ src: "/images/skill/bootstrap-logo.svg", alt: "bootstrap" },
-							{ src: "/images/skill/apple-logo.svg", alt: "Apple" },
-							{ src: "/images/skill/wordpress-logo.svg", alt: "wordpress" },
-							{ src: "/images/skill/vue-logo.svg", alt: "vue" },
-							{ src: "/images/skill/vuetify-logo.svg", alt: "vuetify" },
-						]}
-					/> */}
 				</ParallaxSection>
-
 
 				<ParallaxSection>
-					<Grid
-						container
-						spacing={2}
-						maxWidth={"lg"}
-						>
-						{[
-							{
-								href: "/profile",
-								title: "PROFILE",
-								subTitle: "わたしのこと",
-								text: "気になることはとことん調べて、つくりたくなったらすぐ手を動かすタイプです。便利なものを見つけたらシェアしたくなるし、「これ、もっと良くできるのに…」と思えば勝手に改善しはじめます。",
-								icon: <PermIdentityIcon />,
-							},
-							{
-								href: "/works",
-								title: "WORKS",
-								subTitle: "つくったもの",
-								text: "「これ不便だな…」と思ったら、とりあえず作ってみるタイプです。業務ツールから AI ボットまで、気づいたら色んなジャンルに手を出してました。サッと触ってわかる“ちょうどいい使い心地”を目指しています。",
-								icon: <ComputerIcon />,
-							},
-							{
-								href: "/skills",
-								title: "SKILLS",
-								subTitle: "できること",
-								text: "見た目の部分から裏側のロジックまで、ひと通りまとめてやります。Next.js や Supabase が得意ですが、必要なら何でも触ります。「とりあえず相談してもらえれば何とかする」がモットーです。",
-								icon: <StarRateIcon />,
-							},
-							{
-								href: "/career",
-								title: "CAREER",
-								subTitle: "やってきたこと",
-								text: "現場の「あ、ここ困ってるんだな」を拾い集めて、ちょっとずつ便利にする仕事をしてきました。“やってよかった！”と言ってもらえるのが一番うれしいところです。",
-								icon: <HistoryIcon />,
-							},
-						].map((itm, idx) => (
-							<Grid key={idx} size={{ xs: 12, md: 6, lg: 3 }}>
-								<Link
-									href={itm.href}
-									underline="none"
-									>
-									<Card
-										variant="outlined"
-										sx={{
-											width: "100%",
-											height: "100%",
-											transition: "all .5s",
-											"&:hover": {
-												transform: "scale(1.05)",
-												backgroundColor: lime[50],
-											}
-										}}
-										>
-										<CardContent>
-											<Stack
-												spacing={1}
-												>
-												<Avatar>
-													{itm.icon}
-												</Avatar>
-												<Typography variant="h5" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>{itm.title}</Typography>
-												<Typography variant="body2">{itm.subTitle}</Typography>
-												<Typography variant="caption">{itm.text}</Typography>
-											</Stack>
-										</CardContent>
-									</Card>
-								</Link>
-							</Grid>
-						))}
-					</Grid>
+					<SectionInduction />
 				</ParallaxSection>
 
-				{/* <ParallaxSection>
+				<ParallaxSection>
+					<SectionContact />
+				</ParallaxSection>
+
+				{/*
+				<ParallaxSection>
 					<ShimmeringText
 						text="famoroo portfolio"
 						color="var(--color-cyan-500)"
@@ -209,9 +121,6 @@ export default function ClientPage() {
 						/>
 				</ParallaxSection> */}
 
-				<ParallaxSection>
-					<SectionContact />
-				</ParallaxSection>
 			</ScrollSnapContainer>
 		</Box>
     );

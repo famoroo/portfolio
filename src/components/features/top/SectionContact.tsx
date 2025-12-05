@@ -63,7 +63,14 @@ export default function SectionContact() {
                         color="success"
                         variant='contained'
                         size="large"
-                        sx={{ px: 4, py: 2, mt: 2 }}
+                        sx={{
+                            fontWeight: "Bold",
+                            fontSize: "1.2em",
+                            background: `linear-gradient(to right bottom, #00882d 10%, #00992d 50%, #baf3d3ff 100%)`,
+                            px: 4,
+                            py: 2,
+                            mt: 2
+                        }}
                         >
                         お問い合わせはこちらから
                     </Button>

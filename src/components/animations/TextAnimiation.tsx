@@ -43,7 +43,7 @@ export function GradualSpacing({ text }: Props) {
                         exit="hidden"
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                         className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem]"
-                    >
+                        >
                         {char === ' ' ? <span>&nbsp;</span> : char}
                     </motion.p>
                 ))}
@@ -51,14 +51,17 @@ export function GradualSpacing({ text }: Props) {
         </div>
     );
 }
-export function TypingEffect({ text }: Props) {
+export function TypingEffect({ text, className }: Props) {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
     return (
         <h2
             ref={ref}
-            className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem]"
-        >
+            className={cn(
+                'font-bold tracking-tighter text-xl text-center sm:text-4xl md:text-6xl md:leading-[4rem]',
+                className
+            )}
+            >
             {text.split('').map((letter, index) => (
                 <motion.span
                     key={index}
