@@ -17,9 +17,8 @@ import HistoryIcon from '@mui/icons-material/History';
 
 import { lime } from "@mui/material/colors";
 
-import {
-	TypingEffect,
-} from "@/components/animations/TextAnimiation";
+import { TypingEffect } from "@/components/animations/TextAnimiation";
+
 export default function SectionInduction() {
     return (
         <Grid
@@ -57,7 +56,7 @@ export default function SectionInduction() {
                     icon: <HistoryIcon />,
                 },
             ].map((itm, idx) => (
-                <Grid key={idx} size={{ xs: 12, md: 6 }}>
+                <Grid key={idx} size={6}>
                     <Link
                         href={itm.href}
                         underline="none"
@@ -79,19 +78,14 @@ export default function SectionInduction() {
                                 <Stack
                                     spacing={2}
                                     >
-                                    {/* <Box sx={{ pl: 2 }}>
-                                        <Avatar>
-                                            {itm.icon}
-                                        </Avatar>
-                                    </Box> */}
                                     <Box sx={{ p: 2, borderBottom: "1px solid #eee" }}>
-                                        <Typography variant="h4" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
+                                        <Typography component={'span'} variant="h4" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
                                             <TypingEffect
                                                 text={itm.title}
                                                 className="text-left sm:text-xl md:text-2xl md:leading-none"
                                                 />
                                         </Typography>
-                                        <Typography variant="body1">
+                                        <Typography component={'span'} variant="body1">
                                             <TypingEffect
                                                 text={itm.subTitle}
                                                 className="text-left sm:text-xl md:text-xl font-normal md:leading-none mt-3"

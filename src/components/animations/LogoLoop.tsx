@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import styles from "./LogoLoop.module.scss";
@@ -24,9 +24,12 @@ export function LogoLoop({
 } : {
     logos: LogoType[];
 }) {
-    const [items] = useState<LogoType[]>(() => {
-        return shuffleArray(logos);
-    });
+    // 初期状態はシャッフルせずに元の配列を使用
+    const [items, setItems] = useState<LogoType[]>(logos);
+    // クライアントサイドでマウント後にシャッフル
+    useEffect(() => {
+        setItems(shuffleArray(logos));
+    }, [logos]);
 
     const aboveLogos = items.slice(0, logos.length / 2);
     const bellowLogos = items.slice(logos.length / 2);

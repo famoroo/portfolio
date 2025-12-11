@@ -29,7 +29,7 @@ type Props = {
     category: {
         subTitle: string;
         text: string[];
-        actions: string[];
+        actions?: string[];
     }[];
     experiences: string[];
     comment: string;
@@ -109,15 +109,16 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                                 key={idx}
                                                                 color="success"
                                                                 variant="contained"
-                                                                startIcon={idx%2==0 ? <DevicesIcon /> : <GitHubIcon />}
+                                                                startIcon={action=="github" ? <GitHubIcon /> : <DevicesIcon /> }
                                                                 sx={{ mr: 1 }}
                                                                 whileHover={{ scale: 1.05 }}
                                                                 whileTap={{ scale: 0.95 }}
                                                                 initial={{ opacity: 0 }}
                                                                 animate={{ opacity: 1 }}
                                                                 transition={{ duration: 0.5 }}
+                                                                disabled
                                                                 >
-                                                                github
+                                                                {action}
                                                             </MotionButton>
                                                         ))}
                                                     </Box>

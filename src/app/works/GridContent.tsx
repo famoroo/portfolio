@@ -23,6 +23,7 @@ import {
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DevicesIcon from '@mui/icons-material/Devices';
+import WebIcon from '@mui/icons-material/Web';
 
 type Props = {
     title: string;
@@ -105,7 +106,24 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                 <CardActions>
                                                     <Box>
                                                         {cat.actions.map((action, idx) => (
+                                                            <>
                                                             <MotionButton
+                                                                disabled
+                                                                key={idx}
+                                                                color="success"
+                                                                variant="contained"
+                                                                startIcon={<WebIcon />}
+                                                                sx={{ mr: 1 }}
+                                                                whileHover={{ scale: 1.05 }}
+                                                                whileTap={{ scale: 0.95 }}
+                                                                initial={{ opacity: 0 }}
+                                                                animate={{ opacity: 1 }}
+                                                                transition={{ duration: 0.5 }}
+                                                                >
+                                                                sample
+                                                            </MotionButton>
+                                                            <MotionButton
+                                                                disabled
                                                                 key={idx}
                                                                 color="success"
                                                                 variant="contained"
@@ -119,6 +137,7 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                                 >
                                                                 github
                                                             </MotionButton>
+                                                            </>
                                                         ))}
                                                     </Box>
                                                 </CardActions>

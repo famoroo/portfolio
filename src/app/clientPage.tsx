@@ -26,6 +26,7 @@ import {
 import SectionSkills from "@/components/features/top/SectionSkills";
 import SectionContact from "@/components/features/top/SectionContact";
 import SectionInduction from "@/components/features/top/SectionInduction";
+import CardCarousel from "@/components/animations/CardCarousel";
 
 export default function ClientPage() {
 	return (
@@ -45,6 +46,10 @@ export default function ClientPage() {
 
 				<ParallaxSection>
 					<SectionInduction />
+				</ParallaxSection>
+
+				<ParallaxSection>
+					<CardCarousel />
 				</ParallaxSection>
 
 				<ParallaxSection>
