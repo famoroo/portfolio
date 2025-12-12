@@ -11,12 +11,14 @@ type SmokeImageProps = {
     alt?: string;
     width: number;
     height: number;
+    sx?: object;
 };
 export default function SmokeImage({
     src,
     alt="famoroo portfolio",
     width,
-    height
+    height,
+    sx={}
 }: SmokeImageProps) {
     const [ref, isVisible] = useOnScreen<HTMLDivElement>({ threshold: 0.1 });
 
@@ -25,7 +27,10 @@ export default function SmokeImage({
         <Box
             ref={ref}
             className={`${styles.smoke} ${isVisible ? styles.is_play : ""}`}
-            sx={{ display: "flex", justifyContent: "center" }}
+            sx={[
+                { display: "flex", justifyContent: "center" },
+                sx
+            ]}
             >
             <Image
                 src={src}

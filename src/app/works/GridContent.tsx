@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react"
+import Link from 'next/link'
 
 import {
     Box,
@@ -30,7 +31,10 @@ type Props = {
     category: {
         subTitle: string;
         text: string[];
-        actions: string[];
+        actions: {
+            name: string;
+            url: string;
+        }[];
     }[];
     experiences: string[];
     comment: string;
@@ -104,15 +108,17 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                             </List>
                                             {cat.actions && (
                                                 <CardActions>
-                                                    <Box>
-                                                        {cat.actions.map((action, idx) => (
-                                                            <>
+                                                    {cat.actions.map((action, idx) => (
+                                                        <Link
+                                                            key={`${action.url}${idx}`}
+                                                            href={action.url??""}
+                                                            rel="noopener noreferrer"
+                                                            >
                                                             <MotionButton
-                                                                disabled
-                                                                key={idx}
+                                                                disabled={!action.url}
                                                                 color="success"
                                                                 variant="contained"
-                                                                startIcon={<WebIcon />}
+                                                                startIcon={action.name === "GitHub" ? <GitHubIcon /> : action.name === "Devices" ? <DevicesIcon /> : <WebIcon />}
                                                                 sx={{ mr: 1 }}
                                                                 whileHover={{ scale: 1.05 }}
                                                                 whileTap={{ scale: 0.95 }}
@@ -120,26 +126,10 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                                 animate={{ opacity: 1 }}
                                                                 transition={{ duration: 0.5 }}
                                                                 >
-                                                                sample
+                                                                {action.name ?? "sample"}
                                                             </MotionButton>
-                                                            <MotionButton
-                                                                disabled
-                                                                key={idx}
-                                                                color="success"
-                                                                variant="contained"
-                                                                startIcon={idx%2==0 ? <DevicesIcon /> : <GitHubIcon />}
-                                                                sx={{ mr: 1 }}
-                                                                whileHover={{ scale: 1.05 }}
-                                                                whileTap={{ scale: 0.95 }}
-                                                                initial={{ opacity: 0 }}
-                                                                animate={{ opacity: 1 }}
-                                                                transition={{ duration: 0.5 }}
-                                                                >
-                                                                github
-                                                            </MotionButton>
-                                                            </>
-                                                        ))}
-                                                    </Box>
+                                                        </Link>
+                                                    ))}
                                                 </CardActions>
                                             )}
                                         </CardContent>

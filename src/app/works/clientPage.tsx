@@ -19,7 +19,7 @@ export default function ClientPageForCareers() {
                         "デバイスの資産管理およびセキュリティ設定",
                         "社内端末の一元管理および利用状況のモニタリング",
                     ],
-                    actions: ['github']
+                    actions: [{ name: "github", url: "" }]
                 },
                 {
                     subTitle: "ソフトウェア管理",
@@ -27,7 +27,7 @@ export default function ClientPageForCareers() {
                         "Google Workspace、オンラインストレージなどのアカウント管理/ユーザー権限の設定",
                         "ソフトウェアの更新/不具合対応 等",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "ネットワーク管理",
@@ -35,7 +35,7 @@ export default function ClientPageForCareers() {
                         "社内ネットワーク (LAN/Wi-Fi) の構築/運用/トラブルシューティング",
                         "接続障害・通信不良の対応および改善",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "ヘルプデスク対応",
@@ -43,7 +43,7 @@ export default function ClientPageForCareers() {
                         "社内からの問い合わせ対応/トラブルシューティング",
                         "PC/ネットワーク/ソフトウェアの障害対応および復旧作業",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
             ],
             experiences: [],
@@ -60,7 +60,7 @@ export default function ClientPageForCareers() {
                         "紙媒体・デジタル広告用デザインの制作および入稿データ作成",
                         "施設・店舗用看板のデザイン・レイアウト設計",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
             ],
             experiences: [
@@ -84,7 +84,7 @@ export default function ClientPageForCareers() {
                         "パフォーマンス改善やセキュリティ強化のためのリファクタリング・チューニング",
                         "システム障害対応やインシデント管理、ログ分析を通じた原因究明および改善",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "金属リサイクル業",
@@ -95,57 +95,63 @@ export default function ClientPageForCareers() {
                         "パフォーマンス改善やセキュリティ強化のためのリファクタリング・チューニング",
                         "システム障害対応やインシデント管理、ログ分析を通じた原因究明および改善",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "産業廃棄物処分業",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "解体工事業",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "遺品整理業",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "中古車/パーツ販売業",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "金属加工業",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "ガソリンスタンド",
                     text: [],
-                    actions: [""]
+                    actions: [{
+                        name: "sample",
+                        url: "/works/website/gas-station"
+                    }]
                 },
                 {
                     subTitle: "ペットサロン",
                     text: [],
-                    actions: [""]
+                    actions: [{
+                        name: "sample",
+                        url: "/works/website/pet-salon"
+                    }]
                 },
                 {
                     subTitle: "ホテル",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "ドローン教室",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "セミナー教室",
                     text: [],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
             ],
             experiences: [
@@ -167,84 +173,84 @@ export default function ClientPageForCareers() {
                     text: [
                         "グループ全体の情報を一元管理すべく、共有基盤を構築",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "社内申請システム (ワークフロー)",
                     text: [
                         "各種申請の電子化・申請から承認までのプロセスをDXで効率化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "稟議決裁システム (ワークフロー)",
                     text: [
                         "稟議書の電子化・承認フローの自動化"
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "業績モニタリングシステム",
                     text: [
                         "リアルタイムで業績データを可視化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "スケジュール管理システム",
                     text: [
                         "部門別・個人別のスケジュールを一元管理",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "従業員工数管理システム",
                     text: [
                         "プロジェクト別の工数をリアルタイムで集計・分析",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "レンタカー予約システム",
                     text: [
                         "社用車の予約・管理をオンライン化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "経費入力システム",
                     text: [
                         "経費の申請・承認フローをデジタル化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "社内監査システム",
                     text: [
                         "内部監査プロセスのデジタル化・ログ管理の強化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "改善提案システム",
                     text: [
                         "改善提案書の提出・承認フローをデジタル化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "見積/請求書システム",
                     text: [
                         "見積/請求書のデジタル化",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "予算管理システム",
                     text: [
                         "各事業部の予算/実績(PL,BS)を管理、その数字を元に部門別月次レポート自動生成",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
             ],
             experiences: [
@@ -268,7 +274,7 @@ export default function ClientPageForCareers() {
                         "データの読み込み・集計・フォーマット整形・出力処理を実装",
                         "帳票データを Excel 形式で出力可能にし、デザインのカスタマイズにも対応",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
                 {
                     subTitle: "自動予約システム",
@@ -277,7 +283,7 @@ export default function ClientPageForCareers() {
                         "ログイン処理・ページ遷移・入力・確認・予約確定までの一連の処理を自動化",
                         "実行ログやエラーハンドリング機能を実装して安定稼働を確保",
                     ],
-                    actions: [""]
+                    actions: [{ name: "", url: "" }]
                 },
             ],
             experiences: [

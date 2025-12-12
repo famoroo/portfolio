@@ -305,7 +305,7 @@ export default function CardCarousel() {
 						fontWeight: 'bold',
 					}}
 				>
-					他の案件も見てみる
+					他のWORKSを見る
 				</Button>
 			</Box>
 		</Box>
