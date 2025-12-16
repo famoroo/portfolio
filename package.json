@@ -7,7 +7,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate" // for deploy on vercel
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "node prisma/seed.cjs"
