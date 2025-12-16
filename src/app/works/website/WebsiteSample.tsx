@@ -52,7 +52,12 @@ export default function WorksWebsiteSample({
                         key={`image${index}`}
                         sx={{ display: "flex", justifyContent: "center", p: 4 }}
                         >
-                        <Box className="shadow-xl">
+                        <Box
+                            className="shadow-xl"
+                            style={{
+                                maxWidth: "720px",
+                            }}
+                            >
                             <CardBrowser
                                 image={item.src}
                                 />
@@ -78,7 +83,8 @@ export default function WorksWebsiteSample({
                                 muted
                                 playsInline
                                 style={{
-                                    width: "680px",maxHeight: "70vh",
+                                    width: "680px",
+                                    maxHeight: "70vh",
                                     borderRadius: "12px"
                                 }}
                                 >

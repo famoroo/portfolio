@@ -1,4 +1,6 @@
 "use client";
+
+import { useState, useEffect } from "react";
 import { motion } from "motion/react"
 
 import {
@@ -11,22 +13,29 @@ import {
 import { TypingEffect } from "@/components/animations/TextAnimiation";
 import CardBrowser from "@/components/features/works/CardBrowser";
 
-type itemItem = {
-	id: string;
-	isNew?: boolean;
-	title: string;
-	text: string;
-	src: string;
-	href: string;
-	skills: string[]
-};
+import { getSampleWebsite } from "@/lib/actions/sampleWebsite";
+import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
 
 type props = {
-	items: itemItem[],
 	title?: string,
 	subtitle?: string,
 }
-export default function CardCarouselBrowser({items, title, subtitle}: props) {
+export default function CardCarouselBrowser({
+	title,
+	subtitle
+}: props) {
+
+	const [items, setItems] = useState<sampleWebsiteType[]>([]);
+
+	useEffect(() => {
+		const fetchItems = async () => {
+			const items = await getSampleWebsite();
+			setItems(items.slice(0, 6));
+		};
+		fetchItems();
+	}, []);
+
+
 	return (
 		<Box sx={{ py: 6, px: 2 }}>
 			<Box sx={{ borderBottom: "1px solid #eee", mb: 4 }}>
@@ -75,11 +84,12 @@ export default function CardCarouselBrowser({items, title, subtitle}: props) {
 									}}
 									>
 									<CardBrowser
-										image={item.src}
+										image={`https://picsum.photos/400/160?random=${index}`}
+										// image={item.src}
 										href={item.href}
 										title={item.title}
 										text={item.text}
-										skills={item.skills}
+										skills={item.skills?.split(",")}
 										/>
 								</Box>
 							</motion.div>

@@ -17,3 +17,20 @@ model EmailContact {
 
   @@map("email_contact") // ← テーブル名をスネークケースで作る
 }
+
+model SampleWebsite {
+  id         String   @id @default(cuid())
+  key        String
+  title      String
+  text       String
+  src        String
+  href       String
+  skills     String
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@map("sample_website")
+}
+
+
+
