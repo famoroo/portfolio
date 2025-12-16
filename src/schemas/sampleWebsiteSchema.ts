@@ -18,8 +18,8 @@ const baseSchema = z.object({
 export const sampleWebsiteFromDbSchema = z.object({
     id: z.uuid(),
     ...baseSchema.shape,
-    created_at: z.date(),
-    updated_at: z.date(),
+    createdAt: z.date(),
+    updatedAt: z.date(),
 });
 export type sampleWebsiteType = z.infer<typeof sampleWebsiteFromDbSchema>;
 

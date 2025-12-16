@@ -30,7 +30,7 @@ export default function CardCarouselBrowser({
 	useEffect(() => {
 		const fetchItems = async () => {
 			const items = await getSampleWebsite();
-			setItems(items.slice(0, 6));
+			setItems(items?.slice(0, 6));
 		};
 		fetchItems();
 	}, []);
@@ -89,7 +89,7 @@ export default function CardCarouselBrowser({
 										href={item.href}
 										title={item.title}
 										text={item.text}
-										skills={item.skills?.split(",")}
+										skills={item.skills ? item.skills.split(",") : []}
 										/>
 								</Box>
 							</motion.div>
