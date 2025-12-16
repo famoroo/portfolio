@@ -5,9 +5,10 @@ import {
     Stack,
 } from '@mui/material';
 
-import SmokeImage from "@/components/SmokeImage";
+// import SmokeImage from "@/components/SmokeImage";
 
 import { StaggeredFade } from "@/components/animations/TextAnimiation";
+import CardBrowser from "@/components/features/works/CardBrowser";
 
 type Props = {
     title: string;
@@ -52,7 +53,11 @@ export default function WorksWebsiteSample({
                         sx={{ display: "flex", justifyContent: "center", p: 4 }}
                         >
                         <Box className="shadow-xl">
-                            <SmokeImage
+                            <CardBrowser
+                                image={item.src}
+                                />
+
+                            {/* <SmokeImage
                                 src={item.src}
                                 alt={item.alt}
                                 width={880}
@@ -60,7 +65,7 @@ export default function WorksWebsiteSample({
                                 sx={{
                                     borderRadius: "16px",
                                 }}
-                                />
+                                /> */}
                         </Box>
                     </Box>
                 ))}

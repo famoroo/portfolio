@@ -55,11 +55,11 @@ export function TypingEffect({ text, className }: Props) {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
     return (
-        <h2
+        <Box
             ref={ref}
             className={cn(
                 'font-bold tracking-tighter text-xl text-center sm:text-4xl md:text-6xl md:leading-[4rem]',
-                className
+                className,
             )}
             >
             {text.split('').map((letter, index) => (
@@ -72,7 +72,7 @@ export function TypingEffect({ text, className }: Props) {
                     {letter}
                 </motion.span>
             ))}
-        </h2>
+        </Box>
     );
 }
 export function StaggeredFade({ text, className }: Props) {

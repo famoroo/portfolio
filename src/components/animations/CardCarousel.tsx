@@ -13,7 +13,6 @@ import {
 	IconButton,
 	Button,
 } from '@mui/material';
-// import CodeIcon from '@mui/icons-material/Code';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -28,52 +27,12 @@ type itemItem = {
 	skills: string[];
 };
 
-const items: itemItem[] = [
-	{
-		id: '1',
-		title: 'ポータルサイト',
-		text: 'グループ全体の情報を一元管理すべく、共有基盤を構築',
-		skills: ['laravel', 'vue.js'],
-	},
-	{
-		id: '2',
-		title: "社内申請システム (ワークフロー)",
-		text: "各種申請の電子化・申請から承認までのプロセスをDXで効率化",
-		skills: ['laravel', 'vue.js'],
-	},
-	{
-		id: '3',
-		title: '稟議決裁システム (ワークフロー)',
-		text: "稟議書の電子化・承認フローの自動化",
-		skills: ['laravel', 'vue.js'],
-	},
-	{
-		id: '4',
-		title: "業績モニタリングシステム",
-		text: "リアルタイムで業績データを可視化",
-		skills: ['laravel', 'React'],
-	},
-	{
-		id: '5',
-		title: '社内監査システム',
-		text: '内部監査プロセスのデジタル化・ログ管理の強化',
-		skills: ['laravel', 'React'],
-	},
-	{
-		id: '6',
-		title: '改善提案システム',
-		text: '改善提案書の提出・承認フローをデジタル化',
-		skills: ['laravel', 'Next.js'],
-	},
-	{
-		id: '7',
-		title: '見積/請求書システム',
-		text: '請求書のデジタル化',
-		skills: ['laravel', 'Next.js'],
-	},
-];
-
-export default function CardCarousel() {
+type props = {
+	items: itemItem[],
+	title?: string,
+	subtitle?: string,
+}
+export default function CardCarousel({items, title, subtitle}: props) {
 	const [emblaRef, emblaApi] = useEmblaCarousel(
 		{
 			align: 'start',
@@ -123,19 +82,23 @@ export default function CardCarousel() {
 
 	return (
 		<Box sx={{ py: 6, px: 2 }}>
-			<Box sx={{ p: 2, borderBottom: "1px solid #eee" }}>
-				<Typography component={'span'} variant="h4" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
-					<TypingEffect
-						text="WORKS"
-						className="text-left sm:text-xl md:text-2xl md:leading-none"
-						/>
-				</Typography>
-				<Typography component={'span'} variant="body1">
-					<TypingEffect
-						text="つくったもの"
-						className="text-left sm:text-xl md:text-xl font-normal md:leading-none mt-3"
-						/>
-				</Typography>
+			<Box sx={{ borderBottom: "1px solid #eee", mb: 4 }}>
+				{subtitle &&
+					<Typography component={'span'} variant="body1">
+						<TypingEffect
+							text={subtitle}
+							className="text-left sm:text-xl md:!text-xl md:!leading-none mb-3 text-zinc-500 mx-2"
+							/>
+					</Typography>
+				}
+				{title &&
+					<Typography component={'span'} sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
+						<TypingEffect
+							text={title}
+							className="text-left sm:text-xl md:!text-5xl md:!leading-[3rem] text-zinc-500"
+							/>
+					</Typography>
+				}
 			</Box>
 
 			{/* カルーセル */}
@@ -149,7 +112,7 @@ export default function CardCarousel() {
 									flex: '0 0 auto',
 									width: { xs: '100%', sm: 'calc(50% - 8px)', md: 'calc(33.333% - 11px)' },
 								}}
-							>
+								>
 								<Card
 									sx={{
 										height: '100%',
@@ -201,7 +164,6 @@ export default function CardCarousel() {
 										{/* 詳細情報 */}
 										<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 											<Box sx={{ display: 'flex', alignItems: 'start', gap: 1 }}>
-												{/* <CodeIcon fontSize="small" color="action" sx={{ mt: 0.5 }} /> */}
 												<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
 													{item.skills.map((skill, idx) => (
 														<Chip
@@ -251,7 +213,7 @@ export default function CardCarousel() {
 						'&:hover': { bgcolor: 'grey.100' },
 						'&.Mui-disabled': { display: 'none' },
 					}}
-				>
+					>
 					<ChevronLeftIcon />
 				</IconButton>
 
@@ -268,7 +230,7 @@ export default function CardCarousel() {
 						'&:hover': { bgcolor: 'grey.100' },
 						'&.Mui-disabled': { display: 'none' },
 					}}
-				>
+					>
 					<ChevronRightIcon />
 				</IconButton>
 			</Box>
@@ -305,7 +267,7 @@ export default function CardCarousel() {
 						fontWeight: 'bold',
 					}}
 				>
-					他のWORKSを見る
+					もっとみる
 				</Button>
 			</Box>
 		</Box>
