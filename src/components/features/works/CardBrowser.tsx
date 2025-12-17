@@ -67,7 +67,17 @@ export default function CardBrowser({
         </>
     );
 	return (
-		<Card variant='outlined' sx={{ borderRadius: "12px" }} >
+		<Card
+			variant='outlined'
+			sx={{
+				borderRadius: "12px",
+				"&:hover": {
+					boxShadow: 4,
+					transform: "scale(1.03)",
+					transition: "all 0.3s ease-in-out",
+				},
+			}}
+			>
 			{href ? (
                 <CardActionArea component="a" href={href}>
                     {cardContentBody}

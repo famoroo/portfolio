@@ -107,25 +107,7 @@ export default function ClientPage() {
 					<CardCarouselBrowser
 						title="ウェブサイト"
 						subtitle="つくったもの"
-						// items={[
-						// 	{
-						// 		id: 'gas-station',
-						// 		title: 'ガソリンスタンド',
-						// 		text: "フルサービス型 ガソリンスタンドのウェブサイトを制作",
-						// 		src:"/images/sample/website/gas-station/eyecatch.png",
-						// 		href: "/works/website/gas-station",
-						// 		skills: ['laravel', 'vue.js'],
-						// 	},
-						// 	{
-						// 		id: 'pet-salon',
-						// 		title: "ペットサロン",
-						// 		text: "個人経営の小型犬専用ペットサロンのウェブサイトを制作",
-						// 		src:"/images/sample/website/pet-salon/eyecatch.png",
-						// 		href: "/works/website/pet-salon",
-						// 		skills: ['laravel', 'react.js'],
-						// 	},
-						// ]}
-					/>
+						/>
 				</ParallaxSection>
 
 				<ParallaxSection>

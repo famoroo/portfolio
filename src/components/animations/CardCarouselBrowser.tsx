@@ -30,6 +30,7 @@ export default function CardCarouselBrowser({
 	useEffect(() => {
 		const fetchItems = async () => {
 			const items = await getSampleWebsite();
+			console.log(items)
 			setItems(items?.slice(0, 6));
 		};
 		fetchItems();
@@ -73,6 +74,7 @@ export default function CardCarouselBrowser({
 									repeat: Infinity,
 								}}
 								viewport={{ once: true }}
+								whileHover={{ scale: 1.05 }}
 								style={{ width: "100%" }}
 								>
 								<Box
@@ -84,8 +86,8 @@ export default function CardCarouselBrowser({
 									}}
 									>
 									<CardBrowser
-										image={`https://picsum.photos/400/160?random=${index}`}
-										// image={item.src}
+										// image={`https://picsum.photos/400/160?random=${index}`}
+										image={item.src}
 										href={item.href}
 										title={item.title}
 										text={item.text}
