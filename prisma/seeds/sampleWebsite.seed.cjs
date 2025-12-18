@@ -12,6 +12,8 @@ async function seedSampleWebsite(prisma) {
             "src": "/images/sample/website/pet-salon/eyecatch.png",
             "href": "/works/website/pet-salon",
             "skills": "Laravel,React",
+            "imageCount": 4,
+            "webmCount": 0,
         },
         {
             "key": "gas-station",
@@ -20,6 +22,8 @@ async function seedSampleWebsite(prisma) {
             "src": "/images/sample/website/gas-station/eyecatch.png",
             "href": "/works/website/gas-station",
             "skills": "Wordpress,Vue",
+            "imageCount": 3,
+            "webmCount": 3,
         },
         {
             "key": "drone-school",
@@ -28,7 +32,29 @@ async function seedSampleWebsite(prisma) {
             "src": "/images/sample/website/drone-school/eyecatch.png",
             "href": "/works/website/drone-school",
             "skills": "Wordpress, Vue",
-        }
+            "imageCount": 6,
+            "webmCount": 0,
+        },
+        {
+            "key": "tire-center",
+            "title": "廃タイヤ処理専門工場",
+            "text": "廃タイヤの処理に特化した産業廃処理専門工場のウェブサイトを制作",
+            "src": "/images/sample/website/tire-center/eyecatch.png",
+            "href": "/works/website/tire-center",
+            "skills": "Wordpress, Bootstrap",
+            "imageCount": 7,
+            "webmCount": 0,
+        },
+        {
+            "key": "car-recycle",
+            "title": "廃車リサイクル工場",
+            "text": "廃車買取、代行サービス企業様のウェブサイトを制作",
+            "src": "/images/sample/website/car-recycle/eyecatch.png",
+            "href": "/works/website/car-recycle",
+            "skills": "Wordpress, Bootstrap",
+            "imageCount": 5,
+            "webmCount": 0,
+        },
     ]
 
     await prisma.sampleWebsite.createMany({

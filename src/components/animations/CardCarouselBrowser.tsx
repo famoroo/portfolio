@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "motion/react"
 
 import {
@@ -13,30 +12,18 @@ import {
 import { TypingEffect } from "@/components/animations/TextAnimiation";
 import CardBrowser from "@/components/features/works/CardBrowser";
 
-import { getSampleWebsite } from "@/lib/actions/sampleWebsite";
 import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
 
 type props = {
 	title?: string,
 	subtitle?: string,
+	items: sampleWebsiteType[]
 }
 export default function CardCarouselBrowser({
 	title,
-	subtitle
+	subtitle,
+	items,
 }: props) {
-
-	const [items, setItems] = useState<sampleWebsiteType[]>([]);
-
-	useEffect(() => {
-		const fetchItems = async () => {
-			const items = await getSampleWebsite();
-			console.log(items)
-			setItems(items?.slice(0, 6));
-		};
-		fetchItems();
-	}, []);
-
-
 	return (
 		<Box sx={{ py: 6, px: 2 }}>
 			<Box sx={{ borderBottom: "1px solid #eee", mb: 4 }}>
@@ -87,7 +74,7 @@ export default function CardCarouselBrowser({
 									>
 									<CardBrowser
 										// image={`https://picsum.photos/400/160?random=${index}`}
-										image={item.src}
+										image={`/images/sample/website/${item.key}/eyecatch.png`}
 										href={item.href}
 										title={item.title}
 										text={item.text}

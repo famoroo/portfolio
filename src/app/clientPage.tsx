@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 // import Image from "next/image";
 import {
 	Box,
@@ -29,7 +30,19 @@ import SectionInduction from "@/components/features/top/SectionInduction";
 import CardCarousel from "@/components/animations/CardCarousel";
 import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
 
+import { getSampleWebsites } from "@/lib/actions/sampleWebsite";
+import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
+
 export default function ClientPage() {
+
+	const [ sampleWebsites, setSampleWebsites ] = useState([] as sampleWebsiteType[]);
+    useEffect(() => {
+        (async () => {
+            const res = await getSampleWebsites();
+            setSampleWebsites(res.slice(0, 6));
+        })();
+    }, []);
+
 	return (
 		<Box>
 			<ScrollSnapContainer>
@@ -107,6 +120,7 @@ export default function ClientPage() {
 					<CardCarouselBrowser
 						title="ウェブサイト"
 						subtitle="つくったもの"
+						items={sampleWebsites}
 						/>
 				</ParallaxSection>
 

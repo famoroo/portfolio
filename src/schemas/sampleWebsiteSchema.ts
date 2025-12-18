@@ -10,6 +10,8 @@ const baseSchema = z.object({
     src: z.string(),
     href: z.string(),
     skills: z.string().optional(),
+    imageCount: z.number(),
+    webmCount: z.number(),
 });
 
 /* =========================

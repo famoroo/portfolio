@@ -37,10 +37,15 @@ export default function CardBrowser({
             <CardMedia
                 component="img"
                 height="194"
-				sx={{ p: 0.5 }}
+				sx={{ p: 0.5, objectFit: "contain", objectPosition: "center", transform: "scale(1.02)" }}
                 image={image}
             />
-			<CardContent sx={{ backgroundColor: grey[100] }}>
+			<CardContent
+				sx={{
+					backgroundColor: grey[100],
+					pt: (skills || href) ? 1 : 0,
+				}}
+				>
 				{skills && (
 					<Stack direction="row" spacing={1} sx={{ my: 1}}>
 						{skills.map((skill, idx) => (
