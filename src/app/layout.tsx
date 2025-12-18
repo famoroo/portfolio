@@ -35,12 +35,13 @@ export default function RootLayout({
 		<html lang="ja">
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+				style={{ overflowX: "hidden" }}
+				>
 				<StaggeredMenuWrapper />
 				<div
 					style={{
 						height: "100vh",
-						overflow: "auto",
+						overflow: "hidden",
 						background: `linear-gradient(to bottom right, #d9f99d 10%, #ecfccb 20%, #fff 70%)`,
 						// paddingTop: "100px",
 					}}>

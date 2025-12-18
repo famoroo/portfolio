@@ -52,7 +52,7 @@ async function seedSampleWebsite(prisma) {
             "src": "/images/sample/website/car-recycle/eyecatch.png",
             "href": "/works/website/car-recycle",
             "skills": "Wordpress, Bootstrap",
-            "imageCount": 5,
+            "imageCount": 6,
             "webmCount": 0,
         },
     ]
