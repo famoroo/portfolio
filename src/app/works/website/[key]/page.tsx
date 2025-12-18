@@ -4,7 +4,8 @@ import {
     Container,
     Stack,
     Link,
-    Typography
+    Typography,
+    Divider
 } from '@mui/material';
 
 import { StaggeredFade } from "@/components/animations/TextAnimiation";
@@ -43,24 +44,43 @@ export default async function WorksWebsiteSample(
     return (
         <>
         <Container
-            maxWidth="xl"
+            maxWidth="lg"
             sx={{
-                marginTop: "100px",
+                marginTop: "140px",
                 padding: 8,
                 background: "#fff",
                 borderRadius: "16px",
             }}
             >
-            <Stack direction="row" spacing={1} justifyContent="end">
-                {fetchItem.skills?.split(',').map((chip, index) => (
-                    <Chip key={index} label={chip} />
-                ))}
-            </Stack>
-
-            <Box sx={{ my: 4 }}>
+            <Box sx={{ mt: -13, mb: 8 }}>
                 <StaggeredFade
                     text={fetchItem.title}
+                    className="!md:text-xl"
                     />
+
+                <Box sx={{
+                    width: "100%",
+                    my: 4,
+                    display: "flex",
+                    justifyContent: "center",
+                    }}>
+                    <Divider
+                        sx={{
+                            borderRadius: "16px",
+                            height: "10px",
+                            width: "50px",
+                            borderWidth: "0px",
+                        }}
+                        color="#d9f99d"
+                        />
+                </Box>
+
+                <Stack direction="row" spacing={1} justifyContent="center">
+                    {fetchItem.skills?.split(',').map((chip, index) => (
+                        <Chip key={index} label={chip} sx={{ borderRadius: "4px" }} />
+                    ))}
+                </Stack>
+
                 <Container
                     maxWidth="md"
                     sx={{ mt: 4, backgroundColor: "oklch(92.9% 0.013 255.508)", borderRadius: "8px", p: 2 }}
@@ -71,6 +91,7 @@ export default async function WorksWebsiteSample(
                         />
                 </Container>
             </Box>
+
             <Stack spacing={10}>
                 {Array.from({ length: fetchItem.imageCount }).map((_, index) => (
                     <Box

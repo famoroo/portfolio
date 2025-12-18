@@ -25,7 +25,7 @@ export default function CardCarouselBrowser({
 	items,
 }: props) {
 	return (
-		<Box sx={{ py: 6, px: 2 }}>
+		<Box>
 			<Box sx={{ borderBottom: "1px solid #eee", mb: 4 }}>
 				{subtitle &&
 					<Typography component={'span'} variant="body1">

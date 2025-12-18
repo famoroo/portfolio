@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // import Image from "next/image";
 import {
 	Box,
+	// Container,
 	// Typography,
 	// Stack,
 } from "@mui/material";
@@ -32,6 +33,7 @@ import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
 
 import { getSampleWebsites } from "@/lib/actions/sampleWebsite";
 import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
+import TopBorderSection from "@/components/ui/TopBorderSection";
 
 export default function ClientPage() {
 
@@ -117,11 +119,13 @@ export default function ClientPage() {
 					damping={false}
 					heightScale={1.5}
 					>
-					<CardCarouselBrowser
-						title="ウェブサイト"
-						subtitle="つくったもの"
-						items={sampleWebsites}
-						/>
+					<TopBorderSection>
+						<CardCarouselBrowser
+							title="ウェブサイト"
+							subtitle="つくったもの"
+							items={sampleWebsites}
+							/>
+					</TopBorderSection>
 				</ParallaxSection>
 
 				<ParallaxSection>
