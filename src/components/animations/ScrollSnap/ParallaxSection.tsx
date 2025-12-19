@@ -8,11 +8,13 @@ import { useScrollSnapContainer } from "./ScrollSnapContext";
 export function ParallaxSection({
     children,
     damping=true,
-    heightScale=1,
+    fit=false,
+    // heightScale=1,
 }: {
     children: React.ReactNode
     damping?: boolean
-    heightScale?: number
+    fit?: boolean
+    // heightScale?: number
 }) {
     const sectionRef = useRef(null);
     const containerRef = useScrollSnapContainer(); // ← ここで containerRef が取れる
@@ -41,7 +43,9 @@ export function ParallaxSection({
         <Box
             ref={sectionRef}
             sx={{
-                height: `${ 100 * heightScale}vh`,
+                minHeight: "100vh",
+                p: fit ? 0 : 4,
+                // height: `${ 100 * heightScale}vh`,
                 scrollSnapAlign: "start",
                 position: "relative",
                 overflow: "hidden",

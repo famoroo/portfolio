@@ -103,14 +103,14 @@ export default function CardCarousel({items, title, subtitle}: props) {
 
 			{/* カルーセル */}
 			<Box sx={{ position: 'relative', maxWidth: 1200, mx: 'auto' }}>
-				<Box ref={emblaRef} sx={{ overflow: 'hidden' }}>
-					<Box sx={{ display: 'flex', gap: 2 }}>
+				<Box ref={emblaRef} sx={{ overflow: 'hidden' }} >
+					<Box sx={{ display: 'flex', justifyContent: 'start', gap: 2 }}>
 						{items.map((item) => (
 							<Box
 								key={item.id}
 								sx={{
 									flex: '0 0 auto',
-									width: { xs: '100%', sm: 'calc(50% - 8px)', md: 'calc(33.333% - 11px)' },
+									width: { xs: 'calc(40%)', sm: 'calc(50% - 8px)', md: 'calc(33.333% - 11px)' },
 								}}
 								>
 								<Card

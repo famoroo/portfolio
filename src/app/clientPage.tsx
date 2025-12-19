@@ -116,8 +116,8 @@ export default function ClientPage() {
 				</ParallaxSection>
 
 				<ParallaxSection
-					damping={false}
-					heightScale={1.5}
+					// damping={false}
+					// heightScale={1.5}
 					>
 					<TopBorderSection>
 						<CardCarouselBrowser
@@ -128,7 +128,9 @@ export default function ClientPage() {
 					</TopBorderSection>
 				</ParallaxSection>
 
-				<ParallaxSection>
+				<ParallaxSection
+					fit
+					>
 					<SectionContact />
 				</ParallaxSection>
 

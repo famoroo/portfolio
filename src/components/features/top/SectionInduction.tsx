@@ -56,7 +56,7 @@ export default function SectionInduction() {
                     icon: <HistoryIcon />,
                 },
             ].map((itm, idx) => (
-                <Grid key={idx} size={6}>
+                <Grid key={idx} size={{ xs: 12, md: 6 }}>
                     <Link
                         href={itm.href}
                         underline="none"
