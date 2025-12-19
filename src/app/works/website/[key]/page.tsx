@@ -11,6 +11,7 @@ import {
 import { StaggeredFade } from "@/components/animations/TextAnimiation";
 import CardBrowser from "@/components/features/works/CardBrowser";
 import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
+import MockupBrowser from '@/components/features/works/MockupBrowser';
 
 import { getSampleWebsites } from "@/lib/actions/sampleWebsite";
 
@@ -93,6 +94,10 @@ export default async function WorksWebsiteSample(
             </Box>
 
             <Stack spacing={10}>
+                <MockupBrowser
+                    src={`/images/sample/website/${fetchItem.key}/eyecatch.png`}
+                    />
+
                 {Array.from({ length: fetchItem.imageCount }).map((_, index) => (
                     <Box
                         key={`image${index}`}
@@ -105,7 +110,8 @@ export default async function WorksWebsiteSample(
                             }}
                             >
                             <CardBrowser
-                                image={`/images/sample/website/${fetchItem.key}/${index==0 ? "eyecatch" : index}.png`}
+                                image={`/images/sample/website/${fetchItem.key}/${index+1}.png`}
+                                // image={`/images/sample/website/${fetchItem.key}/${index==0 ? "eyecatch" : index}.png`}
                                 />
 
                             {/* <SmokeImage
@@ -120,6 +126,7 @@ export default async function WorksWebsiteSample(
                         </Box>
                     </Box>
                 ))}
+
                 {Array.from({ length: fetchItem.webmCount }).map((_, index) => (
                     <Box key={`webm${index}`} sx={{ display: "flex", justifyContent: "center", p: 4 }}>
                         <Box className="shadow-xl">
