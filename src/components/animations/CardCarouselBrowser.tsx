@@ -4,10 +4,12 @@ import { motion } from "motion/react"
 
 import {
 	Box,
+	Button,
 	Typography,
 	Container,
 	Grid
 } from '@mui/material';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import { TypingEffect } from "@/components/animations/TextAnimiation";
 import CardBrowser from "@/components/features/works/CardBrowser";
@@ -85,6 +87,24 @@ export default function CardCarouselBrowser({
 						</Grid>
 					))}
 				</Grid>
+
+				{/* もっと見るボタン */}
+				<Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+					<Button
+						variant="outlined"
+						size="large"
+						color='success'
+						endIcon={<ChevronRightIcon />}
+						sx={{
+							borderRadius: 8,
+							px: 4,
+							py: 1.5,
+							fontWeight: 'bold',
+						}}
+					>
+						もっとみる
+					</Button>
+				</Box>
 			</Container>
 		</Box>
 	);

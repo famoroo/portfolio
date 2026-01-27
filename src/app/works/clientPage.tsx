@@ -4,167 +4,186 @@ import { Container } from '@mui/material';
 
 import GridContentForCareer from "./GridContent";
 import PageTitle from "@/components/PageTitle";
+// import { Analytics } from '@mui/icons-material';
+
+import GridSampleWebsites from "@/components/features/works/GridSampleWebsites";
+import GridContentForWebsites from "@/components/features/works/GridContentForWebsites";
 
 export default function ClientPageForCareers() {
     const works = [
-        {
-            title:"ネットワーク/デバイス インフラ管理、ヘルプデスク等",
-            // TODO
-            // skills: [],
-            category: [
-                {
-                    subTitle: "ハードウェア管理",
-                    text: [
-                        "PC (Windows/Mac) やモバイル端末 (iOS/Android) のセットアップ・保守・トラブル対応",
-                        "デバイスの資産管理およびセキュリティ設定",
-                        "社内端末の一元管理および利用状況のモニタリング",
-                    ],
-                    actions: [{ name: "github", url: "" }]
-                },
-                {
-                    subTitle: "ソフトウェア管理",
-                    text: [
-                        "Google Workspace、オンラインストレージなどのアカウント管理/ユーザー権限の設定",
-                        "ソフトウェアの更新/不具合対応 等",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "ネットワーク管理",
-                    text: [
-                        "社内ネットワーク (LAN/Wi-Fi) の構築/運用/トラブルシューティング",
-                        "接続障害・通信不良の対応および改善",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "ヘルプデスク対応",
-                    text: [
-                        "社内からの問い合わせ対応/トラブルシューティング",
-                        "PC/ネットワーク/ソフトウェアの障害対応および復旧作業",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-            ],
-            experiences: [],
-            comment: "社内SEとして、ハードウェアやソフトウェアの管理、ネットワーク運用、ヘルプデスク対応を通じて、社内IT環境の安定稼働とセキュリティ強化に貢献しました。特に、PCやモバイル端末のセットアップ・トラブル対応に加え、ネットワークの構築・運用を担当したことで、インフラ全体を理解し、迅速なトラブル対応や業務効率化を実現しました。また、Google Workspace やオンラインストレージの管理を通じて、アカウントや権限の適切な管理を行い、情報漏洩や不正アクセスの防止にも寄与しました。",
-        },
-        {
-            title:"広告業務",
-            category: [
-                {
-                    subTitle: "チラシ/広告/看板/名刺等デザイン",
-                    text: [
-                        "広告デザインを企画・制作",
-                        "サービスや設置場所、配布媒体を考慮した視認性・デザイン調整",
-                        "紙媒体・デジタル広告用デザインの制作および入稿データ作成",
-                        "施設・店舗用看板のデザイン・レイアウト設計",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-            ],
-            experiences: [
-                "Adobe Illustrator を使用したロゴ・レイアウト・ベクターグラフィック作成スキル",
-                "Adobe Photoshop を使用した画像編集・補正・加工スキル",
-                "配色・フォント・レイアウトに関するデザインスキル",
-                "DTP (印刷物) の入稿データ作成スキル (トンボ・CMYK・解像度管理など)",
-                "印刷・加工に関する知識 (紙質・印刷方式・加工方法など)",
-            ],
-            comment: "社内のサービスブランディングに合わせ、広告や看板、チラシ、名刺などのDTPデザイン・制作を通じて、ターゲット層に応じた効果的なデザインを提供してきました。特に Adobe Illustrator や Photoshop を使用したデザインスキルを活かし制作、入稿までを一貫して担当しました。",
-        },
-        {
-            title:"ウェブサイト開発",
-            category: [
-                {
-                    subTitle: "コーポレートサイト",
-                    text: [
-                        "要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
-                        "フロントエンドは Vue.js/React、バックエンドは Laravel/Wordpress を使用した開発",
-                        "複数サイトのブログ機能や問い合わせフォームを共通システムに統合し、API経由でのデータ連携を実現",
-                        "パフォーマンス改善やセキュリティ強化のためのリファクタリング・チューニング",
-                        "システム障害対応やインシデント管理、ログ分析を通じた原因究明および改善",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "金属リサイクル業",
-                    text: [
-                        "要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
-                        "フロントエンドは Vue.js/React、バックエンドは Laravel/Wordpress を使用した開発",
-                        "複数サイトのブログ機能や問い合わせフォームを共通システムに統合し、API経由でのデータ連携を実現",
-                        "パフォーマンス改善やセキュリティ強化のためのリファクタリング・チューニング",
-                        "システム障害対応やインシデント管理、ログ分析を通じた原因究明および改善",
-                    ],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "産業廃棄物処分業",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "解体工事業",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "遺品整理業",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "中古車/パーツ販売業",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "金属加工業",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "ガソリンスタンド",
-                    text: [],
-                    actions: [{
-                        name: "sample",
-                        url: "/works/website/gas-station"
-                    }]
-                },
-                {
-                    subTitle: "ペットサロン",
-                    text: [],
-                    actions: [{
-                        name: "sample",
-                        url: "/works/website/pet-salon"
-                    }]
-                },
-                {
-                    subTitle: "ホテル",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "ドローン教室",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-                {
-                    subTitle: "セミナー教室",
-                    text: [],
-                    actions: [{ name: "", url: "" }]
-                },
-            ],
-            experiences: [
-                "フロントエンド開発 (React, Vue.js, JavaScript, TypeScript)",
-                "バックエンド開発 (Laravel, PHP)",
-                "API設計・開発・デバッグ",
-                "データベース設計・運用 (MySQL)",
-                "CI/CD 環境構築・運用 (Git, GitHub Actions)",
-                "パフォーマンス改善・セキュリティ対策",
-                "サーバー管理 (Linux, Xserver)",
-            ],
-            comment: "グループ内の15社、20数サービスのウェブサイトを設計/開発/保守/運用。社内SEとして、グループ内のウェブサイトをフルスタックで設計・開発・運用する経験を通じて、システム全体の構成やデータ連携の仕組みを深く理解することができました。特に、複数のサイトで共通利用するブログや問い合わせフォームの統合開発により、コードの再利用性や保守性を大幅に向上させました。また、API設計・パフォーマンス改善・セキュリティ対策など、フルスタック開発に必要なスキルを幅広く習得しました。",
-        },
+        // {
+        //     title:"ネットワーク/デバイス インフラ管理、ヘルプデスク等",
+        //     // TODO
+        //     // skills: [],
+        //     category: [
+        //         {
+        //             subTitle: "ハードウェア管理",
+        //             text: [
+        //                 "PC (Windows/Mac) やモバイル端末 (iOS/Android) のセットアップ・保守・トラブル対応",
+        //                 "デバイスの資産管理およびセキュリティ設定",
+        //                 "社内端末の一元管理および利用状況のモニタリング",
+        //             ],
+        //             actions: [{ name: "github", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "ソフトウェア管理",
+        //             text: [
+        //                 "Google Workspace、オンラインストレージなどのアカウント管理/ユーザー権限の設定",
+        //                 "ソフトウェアの更新/不具合対応 等",
+        //             ],
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "ネットワーク管理",
+        //             text: [
+        //                 "社内ネットワーク (LAN/Wi-Fi) の構築/運用/トラブルシューティング",
+        //                 "接続障害・通信不良の対応および改善",
+        //             ],
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "ヘルプデスク対応",
+        //             text: [
+        //                 "社内からの問い合わせ対応/トラブルシューティング",
+        //                 "PC/ネットワーク/ソフトウェアの障害対応および復旧作業",
+        //             ],
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //     ],
+        //     experiences: [],
+        //     comment: "社内SEとして、ハードウェアやソフトウェアの管理、ネットワーク運用、ヘルプデスク対応を通じて、社内IT環境の安定稼働とセキュリティ強化に貢献しました。特に、PCやモバイル端末のセットアップ・トラブル対応に加え、ネットワークの構築・運用を担当したことで、インフラ全体を理解し、迅速なトラブル対応や業務効率化を実現しました。また、Google Workspace やオンラインストレージの管理を通じて、アカウントや権限の適切な管理を行い、情報漏洩や不正アクセスの防止にも寄与しました。",
+        // },
+        // {
+        //     title:"広告業務",
+        //     category: [
+        //         {
+        //             subTitle: "チラシ/広告/看板/名刺等デザイン",
+        //             text: [
+        //                 "広告デザインを企画・制作",
+        //                 "サービスや設置場所、配布媒体を考慮した視認性・デザイン調整",
+        //                 "紙媒体・デジタル広告用デザインの制作および入稿データ作成",
+        //                 "施設・店舗用看板のデザイン・レイアウト設計",
+        //             ],
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //     ],
+        //     experiences: [
+        //         "Adobe Illustrator を使用したロゴ・レイアウト・ベクターグラフィック作成スキル",
+        //         "Adobe Photoshop を使用した画像編集・補正・加工スキル",
+        //         "配色・フォント・レイアウトに関するデザインスキル",
+        //         "DTP (印刷物) の入稿データ作成スキル (トンボ・CMYK・解像度管理など)",
+        //         "印刷・加工に関する知識 (紙質・印刷方式・加工方法など)",
+        //     ],
+        //     comment: "社内のサービスブランディングに合わせ、広告や看板、チラシ、名刺などのDTPデザイン・制作を通じて、ターゲット層に応じた効果的なデザインを提供してきました。特に Adobe Illustrator や Photoshop を使用したデザインスキルを活かし制作、入稿までを一貫して担当しました。",
+        // },
+        // {
+        //     title:"ウェブサイト開発",
+        //     category: [
+        //         {
+        //             subTitle: "コーポレートサイト",
+        //             text: [
+        //                 "要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
+        //                 "複数サイトのブログ機能や問い合わせフォームを共通システムに統合し、API経由でのデータ連携を実現",
+        //                 "パフォーマンス改善やセキュリティ強化のためのリファクタリング・チューニング",
+        //                 "システム障害対応やインシデント管理、ログ分析を通じた原因究明および改善",
+        //             ],
+        //             skill: { frontend: "Vue.js", backend: "Wordpress" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "金属リサイクル業",
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             text: [
+        //                 "要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
+        //             ],
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "リサイクルボックス",
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             text: [
+        //                 "要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
+        //                 "difyを用いたチャットボットの埋め込み機能も実装",
+        //             ],
+        //             actions: [{
+        //                 name: "サンプル",
+        //                 url: "/works/website/recycle-box"
+        //             }]
+        //         },
+        //         {
+        //             subTitle: "解体工事業",
+        //             text: [],
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "遺品整理業",
+        //             text: [],
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "中古車/パーツ販売業",
+        //             text: [],
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "金属加工業",
+        //             text: [],
+        //             skill: { frontend: "Bootstrap", backend: "Wordpress" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "ガソリンスタンド",
+        //             text: [],
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             actions: [{
+        //                 name: "サンプル",
+        //                 url: "/works/website/gas-station"
+        //             }]
+        //         },
+        //         {
+        //             subTitle: "ペットサロン",
+        //             text: [
+        //                 "個人経営の方のペットサロン開業に合わせて、ご依頼を受けました。",
+        //                 "ヒアリングを通じて要件定義から設計・開発・テスト・デプロイ・運用まで一貫して対応",
+        //             ],
+        //             skill: { frontend: "React.js", backend: "Laravel" },
+        //             actions: [{
+        //                 name: "サンプル",
+        //                 url: "/works/website/pet-salon"
+        //             }]
+        //         },
+        //         {
+        //             subTitle: "ドローン教室",
+        //             text: [],
+        //             skill: { frontend: "Vue.js", backend: "Laravel" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //         {
+        //             subTitle: "セミナー教室",
+        //             text: [],
+        //             skill: { frontend: "Bootstrap", backend: "Wordpress" },
+        //             actions: [{ name: "", url: "" }]
+        //         },
+        //     ],
+        //     experiences: [
+        //         "フロントエンド開発 (React, Vue.js, JavaScript, TypeScript)",
+        //         "バックエンド開発 (Laravel, PHP)",
+        //         "API設計・開発・デバッグ",
+        //         "データベース設計・運用 (MySQL)",
+        //         "CI/CD 環境構築・運用 (Git, GitHub Actions)",
+        //         "パフォーマンス改善・セキュリティ対策",
+        //         "サーバー管理 (Linux, Xserver)",
+        //     ],
+        //     comments: [
+        //         "社内SEとして、20数サービスのウェブサイトをフルスタックで設計/開発/保守/運用してきました。",
+        //         "ウェブサイトを単に作るだけでなく、各社代表との会話を重ね、ヒアリングを通じてサービス構成や業務フローの理解を深めリリースまでに一貫して対応しました。",
+        //         "また、複数のサイトで共通利用するブログや問い合わせフォームの統合開発により、コードの再利用性や保守性を念頭に置いた開発を行いました。",
+        //         "お客様のご要望に添い、google Analyticsを用いたアクセス解析、difyを用いたチャットボットの埋め込み機能など、ユーザー体験向上のための機能も実装しました。",
+        //     ],
+        // },
         {
             title:"ウェブ系 DX化促進",
             category: [
@@ -306,7 +325,10 @@ export default function ClientPageForCareers() {
                 title="Works"
                 subtitle="つくったもの"
                 />
+
+            <GridContentForWebsites />
             <GridContentForCareer items={works} />
+
         </Container>
     );
 }

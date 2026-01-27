@@ -195,12 +195,15 @@ export default function ClientPageForContact({
                                             className={`g-recaptcha bg-gradient-to-br from-${color}-dark via-${color}-main to-${color}-light`}
                                             fullWidth
                                             size="large"
-                                            disabled={true}
+                                            // disabled={true}
                                             // disabled={methods.formState.isSubmitting}
                                             sx={{
                                                 fontWeight: "bold",
                                                 fontSize: "1.4em",
-                                                py: 2
+                                                py: 2,
+                                                borderRadius: "40px",
+                                                color: "white",
+                                                background: "linear-gradient(90deg, #5a66d3 0%, #de4758 50%, #f4d934 100%) 100% top",
                                             }}
                                             loading={pending}
                                             loadingPosition="start"

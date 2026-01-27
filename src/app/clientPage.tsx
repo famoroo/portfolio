@@ -1,12 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-// import Image from "next/image";
 import {
 	Box,
-	// Container,
-	// Typography,
-	// Stack,
 } from "@mui/material";
 
 // import SmokeImage from "@/components/SmokeImage";
@@ -29,21 +24,13 @@ import SectionSkills from "@/components/features/top/SectionSkills";
 import SectionContact from "@/components/features/top/SectionContact";
 import SectionInduction from "@/components/features/top/SectionInduction";
 import CardCarousel from "@/components/animations/CardCarousel";
-import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
+// import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
 
-import { getSampleWebsites } from "@/lib/actions/sampleWebsite";
-import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
 import TopBorderSection from "@/components/ui/TopBorderSection";
 
-export default function ClientPage() {
+import GridSampleWebsites from "@/components/features/works/GridSampleWebsites";
 
-	const [ sampleWebsites, setSampleWebsites ] = useState([] as sampleWebsiteType[]);
-    useEffect(() => {
-        (async () => {
-            const res = await getSampleWebsites();
-            setSampleWebsites(res.slice(0, 6));
-        })();
-    }, []);
+export default function ClientPage() {
 
 	return (
 		<Box>
@@ -120,11 +107,7 @@ export default function ClientPage() {
 					// heightScale={1.5}
 					>
 					<TopBorderSection>
-						<CardCarouselBrowser
-							title="ウェブサイト"
-							subtitle="つくったもの"
-							items={sampleWebsites}
-							/>
+						<GridSampleWebsites />
 					</TopBorderSection>
 				</ParallaxSection>
 

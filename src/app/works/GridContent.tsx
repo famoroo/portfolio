@@ -5,12 +5,12 @@ import { motion } from "motion/react"
 import Link from 'next/link'
 
 import {
-    Box,
     Button,
     Card,
     CardMedia,
     CardContent,
     CardActions,
+    Chip,
     Paper,
     Typography,
     List,
@@ -20,6 +20,7 @@ import {
     Alert,
     Grid,
     Toolbar,
+    Stack,
 } from '@mui/material';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -31,13 +32,17 @@ type Props = {
     category: {
         subTitle: string;
         text: string[];
+        skill?: {
+            frontend: string;
+            backend: string;
+        };
         actions: {
             name: string;
             url: string;
         }[];
     }[];
     experiences: string[];
-    comment: string;
+    comments?: string[];
 }
 
 export default function GridContentForCareer({items} : {items: Props[]}) {
@@ -70,7 +75,7 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                     {content.category && content.category.length>0 && (
                         <Grid container spacing={2}>
                         {content.category.map((cat, index) => (
-                            <Grid size={{ xs: 12, sm: 6 }} key={index} sx={{ display: "flex", alignItems: "stretch" }} >
+                            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index} sx={{ display: "flex", alignItems: "stretch" }} >
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 10 }}
@@ -82,8 +87,8 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                     <Card variant="outlined" sx={{ borderRadius: 4, height: "100%" }}>
                                         <CardMedia
                                             component="img"
-                                            height="194"
-                                            image={`https://picsum.photos/400/160?random=${index}`}
+                                            height="300"
+                                            image={`https://picsum.photos/400/240?random=${index}`}
                                             alt="Paella dish"
                                         />
                                         <CardContent>
@@ -96,15 +101,23 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                 >
                                                 {cat.subTitle}
                                             </Typography>
+                                            {cat.skill && (
+                                                <Stack direction="row" spacing={1} sx={{ p: 1 }} alignItems={"center"} flexWrap={"wrap"}>
+                                                    {/* <Typography variant="caption">フロントエンド</Typography> */}
+                                                    <Chip label={cat.skill.frontend} color="success" size="small" variant="outlined" />
+                                                    {/* <Typography variant="caption">バックエンド</Typography> */}
+                                                    <Chip label={cat.skill.backend} color="secondary" size="small" variant="outlined" />
+                                                </Stack>
+                                            )}
                                             <List>
-                                            {cat.text.map((text, idx) => (
-                                                <React.Fragment key={idx}>
-                                                    <ListItem sx={{ px: 1 }} dense>
-                                                        <ListItemText primary={text} />
-                                                    </ListItem>
-                                                    <Divider component="li" />
-                                                </React.Fragment>
-                                            ))}
+                                                {cat.text.map((text, idx) => (
+                                                    <React.Fragment key={idx}>
+                                                        <ListItem sx={{ px: 1 }} dense>
+                                                            <ListItemText primary={text} />
+                                                        </ListItem>
+                                                        <Divider component="li" />
+                                                    </React.Fragment>
+                                                ))}
                                             </List>
                                             {cat.actions && (
                                                 <CardActions>
@@ -139,21 +152,22 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                         ))}
                         </Grid>
                     )}
-                    {content.comment && (
+                    {content.comments && content.comments?.length>0 && (
                         <Alert
                             sx={{
                                 mt: 2,
                                 p: 1
                             }}
                             >
-                            <Typography
-                                sx={{
-                                    fontWeight: "bold",
-                                }}
-                                variant="body2"
-                                >
-                                {content.comment}
-                            </Typography>
+                            {content.comments.map((comment, index) => (
+                                <Typography
+                                    key={`${comment}${index}`}
+                                    sx={{ my: 0.5, borderBottom: "1px solid #ddd" }}
+                                    variant="body1"
+                                    >
+                                    {comment}
+                                </Typography>
+                            ))}
                         </Alert>
                     )}
                 </Paper>

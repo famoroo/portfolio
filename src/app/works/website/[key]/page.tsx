@@ -87,7 +87,7 @@ export default async function WorksWebsiteSample(
                     sx={{ mt: 4, backgroundColor: "oklch(92.9% 0.013 255.508)", borderRadius: "8px", p: 2 }}
                     >
                     <StaggeredFade
-                        text={fetchItem.text}
+                        text={fetchItem.text?.split('\n').join('\n\n') }
                         className="!text-sm !text-zinc-600"
                         />
                 </Container>
@@ -151,6 +151,7 @@ export default async function WorksWebsiteSample(
 
         <Container
             maxWidth="lg"
+            sx={{ py: 2 }}
             >
             <CardCarouselBrowser
                 subtitle={"その他のウェブサイト"}

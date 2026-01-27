@@ -264,7 +264,7 @@ export default function ClientPageForSkills() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.55, // 各子の開始を0.15秒ずらす
+                staggerChildren: 0.2, // 各子の開始を0.2秒ずらす
             },
         },
     };
@@ -304,7 +304,7 @@ export default function ClientPageForSkills() {
                             <Box
                                 component={motion.div}
                                 variants={itemVariants}
-                                transition={{ duration:0.4, ease: "easeOut"}}
+                                transition={{ duration: 0.4, ease: "easeOut"}}
                                 sx={{
                                     p: 2,
                                     borderRadius: 3,

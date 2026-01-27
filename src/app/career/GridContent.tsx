@@ -110,7 +110,9 @@ export default function GridContentForCareer({items} : {items: Props[]}) {
                                                                 color="success"
                                                                 variant="contained"
                                                                 startIcon={action=="github" ? <GitHubIcon /> : <DevicesIcon /> }
-                                                                sx={{ mr: 1 }}
+                                                                sx={{
+                                                                    mr: 1,
+                                                                }}
                                                                 whileHover={{ scale: 1.05 }}
                                                                 whileTap={{ scale: 0.95 }}
                                                                 initial={{ opacity: 0 }}

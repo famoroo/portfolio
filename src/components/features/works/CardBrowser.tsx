@@ -65,7 +65,7 @@ export default function CardBrowser({
 				{href && (
 					<>
 					<Typography gutterBottom variant="body1" component="div" sx={{ fontWeight: "bold" }}>{title}</Typography>
-					<Typography variant="body2" color="text.secondary">{text}</Typography>
+					<Typography variant="body2" color="text.secondary">{text?.split("\n")[0]}</Typography>
 					</>
 				)}
 			</CardContent>
