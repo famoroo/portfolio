@@ -25,6 +25,7 @@ type itemItem = {
 	title: string;
 	text: string;
 	skills: string[];
+	src?: string;
 };
 
 type props = {
@@ -124,9 +125,13 @@ export default function CardCarousel({items, title, subtitle}: props) {
 									>
 									<CardMedia
 										component="img"
-										height="194"
-										image={`https://picsum.photos/400/160?random=${item.id}`}
-										alt="Paella dish"
+										sx={{
+											height: 200,
+											width: '100%',
+											objectFit: 'cover',
+										}}
+										image={item.src ? `${item.src}/eyecatch.png` : `https://picsum.photos/400/160?random=${item.id}`}
+										alt="sample website"
 									/>
 									<CardContent
 										sx={{
@@ -182,7 +187,9 @@ export default function CardCarousel({items, title, subtitle}: props) {
 											</Box>
 										</Box>
 									</CardContent>
-									<CardActions>
+									<CardActions
+										sx={{ display: 'flex', justifyContent: 'flex-end' }}
+										>
 										<Button
 											disabled
 											color="success"
