@@ -22,6 +22,7 @@ export default function GridSampleWebsites() {
             title="ウェブサイト"
             subtitle="つくったもの"
             items={sampleWebsites}
+            href="/works/website/sample"
             />
     );
 }

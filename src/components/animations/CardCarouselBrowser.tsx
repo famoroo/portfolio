@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react"
-
+import Link from 'next/link'
 import {
 	Box,
 	Button,
@@ -19,11 +19,13 @@ import { sampleWebsiteType } from "@/schemas/sampleWebsiteSchema";
 type props = {
 	title?: string,
 	subtitle?: string,
+	href?: string,
 	items: sampleWebsiteType[]
 }
 export default function CardCarouselBrowser({
 	title,
 	subtitle,
+	href,
 	items,
 }: props) {
 	return (
@@ -89,22 +91,30 @@ export default function CardCarouselBrowser({
 				</Grid>
 
 				{/* もっと見るボタン */}
+				{href &&
 				<Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-					<Button
-						variant="outlined"
-						size="large"
-						color='success'
-						endIcon={<ChevronRightIcon />}
-						sx={{
-							borderRadius: 8,
-							px: 4,
-							py: 1.5,
-							fontWeight: 'bold',
-						}}
-					>
-						もっとみる
-					</Button>
+					<Link
+						href={href}
+						target="_blank"
+						rel="noopener noreferrer"
+						>
+						<Button
+							variant="outlined"
+							size="large"
+							color='success'
+							endIcon={<ChevronRightIcon />}
+							sx={{
+								borderRadius: 8,
+								px: 4,
+								py: 1.5,
+								fontWeight: 'bold',
+							}}
+						>
+							もっとみる
+						</Button>
+					</Link>
 				</Box>
+				}
 			</Container>
 		</Box>
 	);

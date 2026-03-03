@@ -24,7 +24,7 @@ import SectionSkills from "@/components/features/top/SectionSkills";
 import SectionContact from "@/components/features/top/SectionContact";
 import SectionInduction from "@/components/features/top/SectionInduction";
 import CardCarousel from "@/components/animations/CardCarousel";
-import CarouselSampleWebsites from "@/components/features/works/CarouselSampleWebsites";
+// import CarouselSampleWebsites from "@/components/features/works/CarouselSampleWebsites";
 // import CardCarouselBrowser from "@/components/animations/CardCarouselBrowser";
 
 import TopBorderSection from "@/components/ui/TopBorderSection";
@@ -103,9 +103,9 @@ export default function ClientPage() {
 					/>
 				</ParallaxSection>
 
-				<ParallaxSection>
+				{/* <ParallaxSection>
 					<CarouselSampleWebsites />
-				</ParallaxSection>
+				</ParallaxSection> */}
 
 				<ParallaxSection
 					// damping={false}
