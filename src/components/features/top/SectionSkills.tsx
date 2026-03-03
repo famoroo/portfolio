@@ -112,7 +112,7 @@ export default function SectionSkills() {
     ];
 
     return (
-        <Stack sx={{ textAlign: "center" }}>
+        <Stack sx={{ textAlign: "center" }} spacing={6}>
             <Typography
                 sx={{ fontWeight: "bold", textTransform: "uppercase", mb: 2 }}
                 variant="h5"

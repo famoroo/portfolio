@@ -132,7 +132,7 @@ export function RotateWords({
 
     return (
         <Box
-            className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem] w-fit flex items-center jusitfy-center mx-auto gap-1.5"
+            className="text-3xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem] w-fit flex items-center jusitfy-center mx-auto gap-1.5"
         >
             {text}
             <Box

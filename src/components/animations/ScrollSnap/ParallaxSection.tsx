@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useScrollSnapContainer } from "./ScrollSnapContext";
 
 export function ParallaxSection({
@@ -18,6 +18,9 @@ export function ParallaxSection({
 }) {
     const sectionRef = useRef(null);
     const containerRef = useScrollSnapContainer(); // ← ここで containerRef が取れる
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // ← モ
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -46,7 +49,7 @@ export function ParallaxSection({
                 minHeight: "100vh",
                 p: fit ? 0 : 4,
                 // height: `${ 100 * heightScale}vh`,
-                scrollSnapAlign: "start",
+                scrollSnapAlign: isMobile ? "none" : "start", // ← モバイルでは無効化
                 position: "relative",
                 overflow: "hidden",
                 display: "flex",
@@ -59,8 +62,8 @@ export function ParallaxSection({
             <motion.div
                 style={{
                     // y,
-                    opacity,
-                    scale,
+                    opacity: isMobile ? 1 : opacity, // ← モバイルでは固定
+                    scale: isMobile ? 1 : scale,
                     width: "100%",
                     display: "contents",
                 }}

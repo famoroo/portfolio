@@ -29,13 +29,16 @@ export default function CardCarouselBrowser({
 	items,
 }: props) {
 	return (
-		<Box>
-			<Box sx={{ borderBottom: "1px solid #eee", mb: 4 }}>
+		<Container maxWidth="xl"
+			sx={ (theme) => ({
+                p: theme.breakpoints.down("md") ? 1 : 4,
+            })}>
+			<Box sx={{ borderBottom: "1px solid #eee", my: 4, mx: 1  }}>
 				{subtitle &&
 					<Typography component={'span'} variant="body1">
 						<TypingEffect
 							text={subtitle}
-							className="text-left sm:text-xl md:!text-xl md:!leading-none mb-3 text-zinc-500 mx-2"
+							className="text-left !text-sm sm:!text-sm md:!text-xl md:!leading-none mb-1 text-zinc-500"
 							/>
 					</Typography>
 				}
@@ -43,14 +46,14 @@ export default function CardCarouselBrowser({
 					<Typography component={'span'} sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
 						<TypingEffect
 							text={title}
-							className="text-left sm:text-xl md:!text-5xl md:!leading-[3rem] text-zinc-500"
+							className="text-left text-xl sm:text-2xl md:!text-5xl md:!leading-[3rem] text-zinc-500"
 							/>
 					</Typography>
 				}
 			</Box>
 
 			{/* カルーセル */}
-			<Container>
+			{/* <Container> */}
 				<Grid container spacing={3}>
 					{items.map((item, index) => (
 						<Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
@@ -115,7 +118,7 @@ export default function CardCarouselBrowser({
 					</Link>
 				</Box>
 				}
-			</Container>
-		</Box>
+			{/* </Container> */}
+		</Container>
 	);
 }
