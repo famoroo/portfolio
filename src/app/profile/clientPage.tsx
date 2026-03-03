@@ -64,7 +64,7 @@ export default function ClientPageForContact() {
                                                 period: 2012,
                                             },
                                         ].map((item:{title: string, period: number, subtitle?: string}, index) => (
-                                            <>
+                                            <Box key={index}>
                                                 <ListItem alignItems="flex-start" key={index}>
                                                     <ListItemText
                                                         primary={
@@ -93,7 +93,7 @@ export default function ClientPageForContact() {
                                                         />
                                                 </ListItem>
                                                 <Divider />
-                                            </>
+                                            </Box>
                                         ))
                                     }
                                 </Stack>
@@ -105,7 +105,7 @@ export default function ClientPageForContact() {
                                     {
                                         skills.map((item) => (
                                             <Chip key={item.name} sx={{ my: 1, mx: 1 }} label={
-                                                <Stack direction={"row"} alignItems={"center"}>
+                                                <Stack direction={"row"} alignItems={"center"} flexWrap={"wrap"}>
                                                     <Avatar alt={item.name} src={item.src} sx={{ width: 20, height: 20, mx: 2 }} />
                                                     <Typography sx={{ fontWeight: "bold" }}>
                                                         {item.name}

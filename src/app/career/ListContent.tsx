@@ -81,13 +81,13 @@ export default function ListContentForCareer({item}: {item: Props}) {
                     )}
                 </Paper>
             </motion.div>
-            <motion.div
-                initial={{ opacity: 0, y: 10 }}
+            {item.comment && (
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.9 }}
-                >
-                {item.comment && (
+                    >
                     <Alert
                         sx={{
                             mt: 2,
@@ -103,8 +103,8 @@ export default function ListContentForCareer({item}: {item: Props}) {
                             {item.comment}
                         </Typography>
                     </Alert>
-                )}
-            </motion.div>
+                </motion.div>
+            )}
         </Stack>
     );
 }

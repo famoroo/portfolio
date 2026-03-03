@@ -37,6 +37,7 @@ export function LogoLoop({
     const doubledAboveLogos = [...aboveLogos, ...aboveLogos];
     const doubledBellowLogos = [...bellowLogos, ...bellowLogos];
 
+    const SIZE = 80;
     return (
         <div className={styles.scroll_wrap}>
             <div className={styles.scroll_track}>
@@ -48,11 +49,11 @@ export function LogoLoop({
                             <Image
                                 src={logo.src}
                                 alt={logo.alt}
-                                width={logo.width ?? 80}
-                                height={logo.height ?? 80}
+                                width={logo.width ?? SIZE}
+                                height={logo.height ?? SIZE}
                                 style={{
-                                    maxWidth: logo.width ?? 80,
-                                    maxHeight: logo.height ?? 80,
+                                    maxWidth: logo.width ?? SIZE,
+                                    maxHeight: logo.height ?? SIZE,
                                     objectFit: "contain",
                                 }}
                             />
@@ -69,12 +70,11 @@ export function LogoLoop({
                             <Image
                                 src={logo.src}
                                 alt={logo.alt}
-                                width={logo.width ?? 80}
-                                height={logo.height ?? 80}
+                                width={logo.width ?? SIZE}
+                                height={logo.height ?? SIZE}
                                 style={{
-                                    maxWidth: logo.width,
-                                    maxHeight: logo.height,
-                                    minHeight: "120px",
+                                    maxWidth: logo.width ?? SIZE,
+                                    maxHeight: logo.height ?? SIZE,
                                     objectFit: "contain",
                                 }}
                             />

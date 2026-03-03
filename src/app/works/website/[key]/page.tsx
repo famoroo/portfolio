@@ -156,6 +156,7 @@ export default async function WorksWebsiteSample(
             <CardCarouselBrowser
                 subtitle={"その他のウェブサイト"}
                 items={otherItems}
+                href="/works/website/sample"
                 />
         </Container>
         </>

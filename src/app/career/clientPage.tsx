@@ -13,15 +13,16 @@ import {
 import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
 
 import {
+    Accordion,
+    AccordionSummary,
+    AccordionDetails,
     Container,
-    Card,
-    CardHeader,
-    CardContent,
+    Paper,
     Typography,
     Stack,
     useMediaQuery
 } from '@mui/material';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
 	TextSplitAnimiation,
 } from "@/components/animations/TextAnimiation";
@@ -73,72 +74,11 @@ export default function ClientPageForCareers() {
         },
         {
             year: 2012,
-            period: "社内SE ~ 今に至る",
-            text: "情報システム部の立ち上げメンバーとして入社。社内SEとして、DX化、ウェブサイト開発、ハードウェア/ソフトウェアの管理、ネットワーク運用、ヘルプデスク対応など、総勢200〜300名のグループ企業を一人で歴任。この経歴を通じて、幅広いITスキルと問題解決能力を培う。",
+            period: "社内SE ~ 現在",
+            text: "情報システム部の立ち上げメンバーとして入社。社内SEとして、DX化、ウェブサイト開発、ハードウェア/ソフトウェアの管理、ネットワーク運用、ヘルプデスク対応など、総勢200〜300名のグループ企業をほぼ１人で歴任。この経歴を通じて、幅広いITスキルと問題解決能力を培う。",
             items: [
                 {
-                    title:"ネットワーク/デバイス インフラ管理、ヘルプデスク等",
-                    // TODO
-                    // skills: [],
-                    category: [
-                        {
-                            subTitle: "ハードウェア管理",
-                            text: [
-                                "PC (Windows/Mac) やモバイル端末 (iOS/Android) のセットアップ・保守・トラブル対応",
-                                "デバイスの資産管理およびセキュリティ設定",
-                                "社内端末の一元管理および利用状況のモニタリング",
-                            ],
-                        },
-                        {
-                            subTitle: "ソフトウェア管理",
-                            text: [
-                                "Google Workspace、オンラインストレージなどのアカウント管理/ユーザー権限の設定",
-                                "ソフトウェアの更新/不具合対応 等",
-                            ],
-                        },
-                        {
-                            subTitle: "ネットワーク管理",
-                            text: [
-                                "社内ネットワーク (LAN/Wi-Fi) の構築/運用/トラブルシューティング",
-                                "接続障害・通信不良の対応および改善",
-                            ],
-                        },
-                        {
-                            subTitle: "ヘルプデスク対応",
-                            text: [
-                                "社内からの問い合わせ対応/トラブルシューティング",
-                                "PC/ネットワーク/ソフトウェアの障害対応および復旧作業",
-                            ],
-                        },
-                    ],
-                    experiences: [],
-                    comment: "社内SEとして、ハードウェアやソフトウェアの管理、ネットワーク運用、ヘルプデスク対応を通じて、社内IT環境の安定稼働とセキュリティ強化に貢献しました。特に、PCやモバイル端末のセットアップ・トラブル対応に加え、ネットワークの構築・運用を担当したことで、インフラ全体を理解し、迅速なトラブル対応や業務効率化を実現しました。また、Google Workspace やオンラインストレージの管理を通じて、アカウントや権限の適切な管理を行い、情報漏洩や不正アクセスの防止にも寄与しました。",
-                },
-                {
-                    title:"広告業務",
-                    category: [
-                        {
-                            subTitle: "チラシ/広告/看板/名刺等デザイン",
-                            text: [
-                                "広告デザインを企画・制作",
-                                "サービスや設置場所、配布媒体を考慮した視認性・デザイン調整",
-                                "紙媒体・デジタル広告用デザインの制作および入稿データ作成",
-                                "施設・店舗用看板のデザイン・レイアウト設計",
-                            ],
-                            actions: ["sample"]
-                        },
-                    ],
-                    experiences: [
-                        "Adobe Illustrator を使用したロゴ・レイアウト・ベクターグラフィック作成スキル",
-                        "Adobe Photoshop を使用した画像編集・補正・加工スキル",
-                        "配色・フォント・レイアウトに関するデザインスキル",
-                        "DTP (印刷物) の入稿データ作成スキル (トンボ・CMYK・解像度管理など)",
-                        "印刷・加工に関する知識 (紙質・印刷方式・加工方法など)",
-                    ],
-                    comment: "社内のサービスブランディングに合わせ、広告や看板、チラシ、名刺などのDTPデザイン・制作を通じて、ターゲット層に応じた効果的なデザインを提供してきました。特に Adobe Illustrator や Photoshop を使用したデザインスキルを活かし制作、入稿までを一貫して担当しました。",
-                },
-                {
-                    title:"ウェブサイト開発",
+                    title:"🖥️ ウェブサイト開発",
                     category: [
                         {
                             subTitle: "コーポレートサイト",
@@ -225,7 +165,7 @@ export default function ClientPageForCareers() {
                     comment: "グループ内の15社、20数サービスのウェブサイトを設計/開発/保守/運用。社内SEとして、グループ内のウェブサイトをフルスタックで設計・開発・運用する経験を通じて、システム全体の構成やデータ連携の仕組みを深く理解することができました。特に、複数のサイトで共通利用するブログや問い合わせフォームの統合開発により、コードの再利用性や保守性を大幅に向上させました。また、API設計・パフォーマンス改善・セキュリティ対策など、フルスタック開発に必要なスキルを幅広く習得しました。",
                 },
                 {
-                    title:"ウェブ系 DX化促進",
+                    title:"📺 ウェブ系 DX化促進",
                     category: [
                         {
                             subTitle: "ポータルサイト",
@@ -324,7 +264,7 @@ export default function ClientPageForCareers() {
                     comment: "社内DX化を推進するため、各部門の業務プロセスを見直し、システム化を通じて業務効率を大幅に改善しました。特に、ワークフローの自動化やリアルタイムな業績モニタリングにより、意思決定のスピードが向上しました。システム開発においては、React や Laravel を使用したフルスタック開発、API設計、セキュリティ対策を通じて、堅牢で拡張性の高いシステムを構築しました。また、CI/CD による自動化により、開発効率と品質が向上しました。",
                 },
                 {
-                    title:"デスクトップ系 DX化促進",
+                    title:"🗺️ デスクトップ系 DX化促進",
                     category: [
                         {
                             subTitle: "帳票自動生成システム",
@@ -354,13 +294,74 @@ export default function ClientPageForCareers() {
                     ],
                     comment: "Python を使用して、データ集計や自動操作に関するデスクトップアプリを開発しました。帳票自動生成システムでは、CSVデータから PL・BS・実績推移表を自動生成し、業務効率を大幅に向上させました。また、自動予約システムでは Selenium を使用したブラウザ操作を実装し、予約作業の省力化に成功しました。エラーハンドリングやログ管理も含めた安定稼働を実現し、メンテナンス性・拡張性の高いシステムを構築しました。",
                 },
+                {
+                    title: "🛜 ネットワーク/デバイス インフラ管理、ヘルプデスク等",
+                    // TODO
+                    // skills: [],
+                    category: [
+                        {
+                            subTitle: "ハードウェア管理",
+                            text: [
+                                "PC (Windows/Mac) やモバイル端末 (iOS/Android) のセットアップ・保守・トラブル対応",
+                                "デバイスの資産管理およびセキュリティ設定",
+                                "社内端末の一元管理および利用状況のモニタリング",
+                            ],
+                        },
+                        {
+                            subTitle: "ソフトウェア管理",
+                            text: [
+                                "Google Workspace、オンラインストレージなどのアカウント管理/ユーザー権限の設定",
+                                "ソフトウェアの更新/不具合対応 等",
+                            ],
+                        },
+                        {
+                            subTitle: "ネットワーク管理",
+                            text: [
+                                "社内ネットワーク (LAN/Wi-Fi) の構築/運用/トラブルシューティング",
+                                "接続障害・通信不良の対応および改善",
+                            ],
+                        },
+                        {
+                            subTitle: "ヘルプデスク対応",
+                            text: [
+                                "社内からの問い合わせ対応/トラブルシューティング",
+                                "PC/ネットワーク/ソフトウェアの障害対応および復旧作業",
+                            ],
+                        },
+                    ],
+                    experiences: [],
+                    comment: "社内SEとして、ハードウェアやソフトウェアの管理、ネットワーク運用、ヘルプデスク対応を通じて、社内IT環境の安定稼働とセキュリティ強化に貢献しました。特に、PCやモバイル端末のセットアップ・トラブル対応に加え、ネットワークの構築・運用を担当したことで、インフラ全体を理解し、迅速なトラブル対応や業務効率化を実現しました。また、Google Workspace やオンラインストレージの管理を通じて、アカウントや権限の適切な管理を行い、情報漏洩や不正アクセスの防止にも寄与しました。",
+                },
+                {
+                    title:"🪪 広告業務",
+                    category: [
+                        {
+                            subTitle: "チラシ/広告/看板/名刺等デザイン",
+                            text: [
+                                "広告デザインを企画・制作",
+                                "サービスや設置場所、配布媒体を考慮した視認性・デザイン調整",
+                                "紙媒体・デジタル広告用デザインの制作および入稿データ作成",
+                                "施設・店舗用看板のデザイン・レイアウト設計",
+                            ],
+                            actions: ["sample"]
+                        },
+                    ],
+                    experiences: [
+                        "Adobe Illustrator を使用したロゴ・レイアウト・ベクターグラフィック作成スキル",
+                        "Adobe Photoshop を使用した画像編集・補正・加工スキル",
+                        "配色・フォント・レイアウトに関するデザインスキル",
+                        "DTP (印刷物) の入稿データ作成スキル (トンボ・CMYK・解像度管理など)",
+                        "印刷・加工に関する知識 (紙質・印刷方式・加工方法など)",
+                    ],
+                    comment: "社内のサービスブランディングに合わせ、広告や看板、チラシ、名刺などのDTPデザイン・制作を通じて、ターゲット層に応じた効果的なデザインを提供してきました。特に Adobe Illustrator や Photoshop を使用したデザインスキルを活かし制作、入稿までを一貫して担当しました。",
+                },
             ],
         },
     ]
 
     return (
         <Container
-            maxWidth="xl"
+            maxWidth="lg"
             sx={{ paddingTop: "100px" }}
             >
             <PageTitle
@@ -391,7 +392,7 @@ export default function ClientPageForCareers() {
                     }}
                     >
                     {
-                        careers.map((career) => (
+                        careers.map((career, index) => (
                             <TimelineItem key={career.year}>
                                 <TimelineOppositeContent>
                                     <Typography
@@ -408,17 +409,16 @@ export default function ClientPageForCareers() {
                                     <TimelineDot color="success" />
                                     <TimelineConnector sx={{ bgcolor: 'success.light' }}/>
                                 </TimelineSeparator>
-                                <TimelineContent>
-                                    <Card
-                                        sx={{
-                                            mb: 8,
-                                            borderRadius: 4,
-                                        }}
+                                <TimelineContent sx={{ my: 2 }}>
+                                    <Accordion
+                                        defaultExpanded={index === careers.length - 1}
                                         >
-                                        <CardHeader
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
                                             sx={{
                                                 position: 'relative',
-                                                pb: 0,
+                                                py: 1,
+                                                pt: 2,
                                                 '::before': {
                                                     top: 0,
                                                     left: 0,
@@ -431,36 +431,38 @@ export default function ClientPageForCareers() {
                                                 }
                                             }}
                                             >
-                                        </CardHeader>
-                                        <CardContent>
-                                            <Stack spacing={2}>
-                                                <Typography
-                                                    variant="h5"
-                                                    sx={{
-                                                        fontWeight: "bold",
-                                                        px: 1,
-                                                    }}
-                                                    >
-                                                    <TextSplitAnimiation text={career.period} />
-                                                </Typography>
+                                            <Typography
+                                                variant="h5"
+                                                sx={{
+                                                    fontWeight: "bold",
+                                                    px: 1,
+                                                }}
+                                                >
+                                                <TextSplitAnimiation text={career.period} />
+                                            </Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails sx={{ pt: 0 }}>
+                                            <Paper sx={{ mb: 2, p: 2 }}
+                                                variant="outlined"
+                                                >
                                                 <Typography
                                                     variant="caption"
                                                     color="text.secondary"
                                                     sx={{
-                                                        px: 1,
+                                                        p: 1,
                                                     }}
                                                     >
                                                     {career.text}
                                                 </Typography>
-                                                {career.list &&
-                                                    <ListContentForCareer item={career.list} />
-                                                }
-                                                {career.items &&
-                                                    <GridContentForCareer items={career.items} />
-                                                }
-                                            </Stack>
-                                        </CardContent>
-                                    </Card>
+                                            </Paper>
+                                            {career.list &&
+                                                <ListContentForCareer item={career.list} />
+                                            }
+                                            {career.items &&
+                                                <GridContentForCareer items={career.items} />
+                                            }
+                                        </AccordionDetails>
+                                    </Accordion>
                                 </TimelineContent>
                             </TimelineItem>
                         ))
